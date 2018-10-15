@@ -5,11 +5,6 @@
    $credentials = "user = zbujcjxtcupcbv  password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646";
 
    $db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db) {
-      echo "Error : Unable to open database\n";
-   } else {
-      echo "Opened database successfully\n";
-   }
 ?>
 
 <html>
@@ -31,7 +26,7 @@
 							<li>
 								<a href="#" class="icon fa-angle-down">Menu</a>
 								<ul>
-									<li><a href="signup.html">Sign Up</a></li>
+									<li><a href="signup.php">Sign Up</a></li>
 									<li><a href="login.html">Log In</a></li>
 									<li><a href="about.html">About Us</a></li>
 									<li><a href="contact.html">Contact</a></li>
