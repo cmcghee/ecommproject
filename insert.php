@@ -6,7 +6,7 @@
       echo "Opened database successfully\n";
    	}
 
-	$query = "INSERT INTO siteUsers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]','$_POST[password]', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
+	$query = "INSERT INTO siteusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]','$_POST[password]', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 	//pg_query($db, $query);
 
 	if (pg_query($dbconn,$query))  {
