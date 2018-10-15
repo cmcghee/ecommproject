@@ -6,7 +6,7 @@
 
 	$db = pg_connect( "$host $port $dbname $credentials"  );
 
-	$query = "INSERT INTO siteUsers (email, password, name, state, address, zip, city) VALUES ('$_POST[email]','$_POST[password]', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
+	$query = ($db, "INSERT INTO siteUsers (email, password, name, state, address, zip, city) VALUES ('$_POST[email]','$_POST[password]', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')");
 	pg_query($query);
 	echo $query;
 ?>
