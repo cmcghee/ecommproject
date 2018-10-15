@@ -153,16 +153,16 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			function validate(){
-				isCityOk();
-			}
-			function isCityOk(city){
-				if(!/[^a-z]/i.test(city)){
-					alert("Only letters are allowed");
-					return false;
-				}
-				return true;
-			}
+			// function validate(){
+			// 	isCityOk();
+			// }
+			// function isCityOk(city){
+			// 	if(!/[^a-z]/i.test(city)){
+			// 		alert("Only letters are allowed");
+			// 		return false;
+			// 	}
+			// 	return true;
+			// }
 			function aretwopasswordssame(password,retype){
 				if(password !== retype){
 					alert("passwords should be the same");
