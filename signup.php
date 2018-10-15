@@ -45,7 +45,7 @@
 				<h2>Sign Up</h2>
 			</header>
 			<div class="box">
-				<form name="signup" method="post" action="signup.php">
+				<form name="insert" method="post" action="insert.php">
 					<div class="row gtr-50 gtr-uniform">
 						<div class="col-6 col-12-mobilep">
 							Name
@@ -136,7 +136,7 @@
 						<div class="col-12">
 							<ul class="actions special">
 								<!-- <li><input type="submit" value="Sign Up" /></li> -->
-								<li><input type="button" value="Submit"/></li>
+								<li><input type="submit" value="Submit" onclick="validate()"/></li>
 							</ul>
 						</div>
 					</div>
@@ -153,16 +153,32 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// function validate(){
-			// 	isCityOk();
-			// }
-			// function isCityOk(city){
-			// 	if(!/[^a-z]/i.test(city)){
-			// 		alert("Only letters are allowed");
-			// 		return false;
-			// 	}
-			// 	return true;
-			// }
+			function validate(){
+				var name = document.getElementById('name').value;
+				var email = document.getElementById('email').value;
+				var password = document.getElementById('password').value;
+				var retype = document.getElementById('retype').value;
+				var address = document.getElementById('address').value;
+				var city = document.getElementById('city').value;
+				var state = document.getElementById('state').value;
+				var zip = document.getElementById('zip').value;
+				console.log(city);
+				isCityOk(city);
+				isPasswordOk(password);
+				aretwopasswordssame(password,retype);
+			}
+			function isCityOk(city){
+				if(city.length === 0){
+					alert("City is required");
+					return false;
+				}
+				var letters = /^[A-Za-z]+$/;
+				if (!city.match(letters)){
+					alert("Only letters are allowed");
+					return false;
+				}
+				return true;
+			}
 			function aretwopasswordssame(password,retype){
 				if(password !== retype){
 					alert("passwords should be the same");
@@ -178,15 +194,3 @@
 		</script>
 </body>
 </html>
-
-<?php
-	$host        = "host = ec2-184-72-234-230.compute-1.amazonaws.com";
-	$port        = "port = 5432";
-	$dbname      = "dbname = d3au1dsacafa29";
-	$credentials = "user = zbujcjxtcupcbv  password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646";
-
-	$db = pg_connect( "$host $port $dbname $credentials"  );
-
-	$query = "INSERT INTO siteUsers VALUES ('$_POST[email]','$_POST[password]', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
-	$result = pg_query($query); 
-?>
