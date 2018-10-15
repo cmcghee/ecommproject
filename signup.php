@@ -45,7 +45,7 @@
 				<h2>Sign Up</h2>
 			</header>
 			<div class="box">
-				<form method="post" action="#">
+				<form name="signup" method="post" action="signup.php">
 					<div class="row gtr-50 gtr-uniform">
 						<div class="col-6 col-12-mobilep">
 							Name
@@ -136,7 +136,7 @@
 						<div class="col-12">
 							<ul class="actions special">
 								<!-- <li><input type="submit" value="Sign Up" /></li> -->
-								<li><input type="button" value="Submit" onclick="validate()"/></li>
+								<li><input type="button" value="Submit"/></li>
 							</ul>
 						</div>
 					</div>
