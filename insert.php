@@ -12,6 +12,12 @@
    	}
 
 	$query = "INSERT INTO siteUsers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]','$_POST[password]', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
-	pg_query($query);
-	echo $query;
+	//pg_query($db, $query);
+
+	if (pg_query($db,$query))  {
+        echo "user created successfully. ";
+    }
+    else  {
+        echo "Error creating user. ";
+    }
 ?>
