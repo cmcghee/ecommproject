@@ -24,10 +24,10 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
+					<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
 					<nav id="nav">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<li>
 								<a href="#" class="icon fa-angle-down">Menu</a>
 								<ul>
@@ -36,7 +36,7 @@
 									<li><a href="about.html">About Us</a></li>
 									<li><a href="contact.html">Contact</a></li>
 								</ul>
-							<li><a href="index.html">Purchase</a></li>
+							<li><a href="index.php">Purchase</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -48,7 +48,7 @@
 					<ul class="actions special">
 						<li><a href="signup.html" class="button primary">Sign Up</a></li>
 						<li><a href="about.html" class="button primary">About Us</a></li>
-						<li><a href="index.html" class="button primary">Purchase</a></li>
+						<li><a href="index.php" class="button primary">Purchase</a></li>
 					</ul>
 				</section>
 
