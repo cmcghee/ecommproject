@@ -29,7 +29,6 @@
 					<?php
 					$action = null;
 					?>
-					return;
 				} else {
 					<?php
 					$action = "insert.php";
