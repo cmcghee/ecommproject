@@ -3,7 +3,7 @@
 
    	$hashedpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-	$query = "INSERT INTO currentusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', '$_POST[password]', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
+	$query = "INSERT INTO currentusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', $hashedpassword, '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 
 	if (pg_query($dbconn,$query))  {
         $text = "Success";
