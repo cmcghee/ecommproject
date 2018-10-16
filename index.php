@@ -19,7 +19,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="60%" /></span>
+					<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="50%" /></span>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.php">Home</a></li>
