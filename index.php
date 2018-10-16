@@ -19,7 +19,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
+					<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="60%" /></span>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.php">Home</a></li>
@@ -109,7 +109,7 @@
 							<section class="box special">
 								<span class="image featured"><img src="images/intelchair.jpg" alt="" /></span>
 								<h3>Powered by Nissan</h3>
-								<p>With backing from Nissan, GlideTech is able to mass produce these intelligent chairs. Nissan's funding and technology has allowed us to create a state of the art product</p>
+								<p>With backing from Nissan, GlideTech is able to mass produce these chairs. Nissan's funding and technology has allowed us to create a state of the art product</p>
 								
 							</section>
 
