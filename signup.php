@@ -1,4 +1,9 @@
-
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 
 <head>
@@ -13,10 +18,10 @@
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
+			<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
 			<nav id="nav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li>
 						<a href="#" class="icon fa-angle-down">Menu</a>
 						<ul>
@@ -45,19 +50,19 @@
 				<h2>Sign Up</h2>
 			</header>
 			<div class="box">
-				<form name="insert" method="post" action="insert.php">
+				<form method="POST" action='<?php echo $action?>'>
 					<div class="row gtr-50 gtr-uniform">
 						<div class="col-6 col-12-mobilep">
 							Name
-							<input type="text" name="name" id="name" value="" />
+							<input type="text" name="name" id="name" value="" required=true/>
 						</div>
 						<div class="col-6 col-12-mobilep">
 							Email
-							<input type="email" name="email" id="email" value="" />
+							<input type="email" name="email" id="email" value="" required/>
 						</div>
 						<div class="col-12">
 							Password
-							<input type="password" name="password" id="password" value="" />
+							<input type="password" name="password" id="password" value="" required/>
 						</div>
 						<div class="col-12">
 							Retype Password
@@ -73,7 +78,7 @@
 						</div>
 						<div class="col-4 col-12-mobilep">
 							State
-							<select name="State" required>
+							<select name="State" required id="state">
 								<option value="Change">SELECT</option>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
@@ -126,17 +131,16 @@
 								<option value="WV">WV</option>
 								<option value="WI">WI</option>
 								<option value="WY">WY</option>
-								<option value="AL">AL</option>
 							</select>
 						</div>
 						<div class="col-4 col-12-mobilep">
 							Zipcode
-								<input type="text" name="zip" id="zip" value="" />
-							</div>
+							<input type="text" name="zip" id="zip" value="" />
+						</div>
 						<div class="col-12">
 							<ul class="actions special">
 								<!-- <li><input type="submit" value="Sign Up" /></li> -->
-								<li><input type="submit" value="Submit" onclick="validate()"/></li>
+								<input type="submit" value="submit" onclick="validate()" />
 							</ul>
 						</div>
 					</div>
@@ -153,7 +157,7 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			function validate(){
+			function validate() {
 				var name = document.getElementById('name').value;
 				var email = document.getElementById('email').value;
 				var password = document.getElementById('password').value;
@@ -162,35 +166,136 @@
 				var city = document.getElementById('city').value;
 				var state = document.getElementById('state').value;
 				var zip = document.getElementById('zip').value;
-				console.log(city);
-				isCityOk(city);
-				isPasswordOk(password);
-				aretwopasswordssame(password,retype);
+				console.log(state);
+				if (!isValidName(name) || !isValidEmail(email) || !isPasswordOk(password) || !aretwopasswordssame(password, retype) ||
+					!isValidAddress(address) || !isCityOk(city) || !isStateSelect(state) || !isValidZipCode(zip)) {
+					<?php
+					$action = "";
+					?>
+					return;
+				} else {
+					<?php
+					$action = "index.php";
+					?>
+				}
 			}
-			function isCityOk(city){
-				if(city.length === 0){
+			function isCityOk(city) {
+				if (city.length === 0) {
 					alert("City is required");
 					return false;
 				}
 				var letters = /^[A-Za-z]+$/;
-				if (!city.match(letters)){
-					alert("Only letters are allowed");
+				if (!city.match(letters)) {
+					alert("Only letters are allowed in city");
 					return false;
 				}
 				return true;
 			}
-			function aretwopasswordssame(password,retype){
-				if(password !== retype){
-					alert("passwords should be the same");
+			function aretwopasswordssame(password, retype) {
+				if (retype.length < 8) {
+					alert("Please type password in the retype password field");
+					return false;
+				}
+				if (password !== retype) {
+					alert("Passwords should be the same");
 					return false;
 				}
 				return true;
 			}
-			function isPasswordOk(password){
-				if(password.length() < 8){
-					alert("passwords should be 8 characters or more");
+			function isPasswordOk(password) {
+				if (password.length < 8) {
+					alert("Passwords should be 8 characters or more");
+					return false;
 				}
+				return true;
+			}
+			function isStateSelect(state) {
+				if (state === 'Change') {
+					alert('Choose a valid state');
+					return false;
+				}
+				return true;
 			}
 		</script>
+		<script>
+			function isValidZipCode(zip) {
+				var isValid = /^[0-9]{5}(?:-[0-9]{4})?$/.test(zip);
+				if (zip === "") {
+					alert("Must enter a ZIP code")
+					return false;
+				}
+				if (zip.length > 5 || zip.length < 5) {
+					alert("ZIP code must be 5 digits long");
+					return false;
+				}
+				if (!(isValid)) {
+					alert('ZIP code is invalid - Please try again');
+					return false;
+				}
+				return true;
+			}
+		</script>
+
+		<script>
+			function isValidName(name) {
+				var myName = /^[A-Za-z\ \.]+$/;
+				if (name.length === 0) {
+					alert('Please enter your name')
+					return false;
+				}
+				if (!name.match(myName)) {
+					alert("Must enter a valid name");
+					return false;
+				}
+				return true;
+			}
+		</script>
+
+
+		<script>
+			function isValidEmail(mail) {
+				// if (/^\w+([\.-]?\w+)*@\w+([\.-]?\/w+)*(\.\w{2,3})+$/.test(mail))
+				var expression = /^([a-zA-Z0-9\-\._]+)@(([a-zA-Z0-9\-_]+\.)+)([a-z]{2,3})$/;
+				if (!(expression.test(mail))) {
+					alert("Please enter a valid email address");
+					return false;
+				}
+				// else
+				// {
+				// 	alert("Please enter a valid email address");
+				// 	return false;
+				// }
+				return true;
+			}
+
+		</script>
+
+
+		<script>
+			function isValidAddress(address) {
+				var addr = /^[a-zA-Z0-9\ \.]+$/.test(address);
+				if (address === "") {
+					alert("Please enter a street address");
+					// address.focus();
+					return false;
+				}
+				if (address.substring(0, 1) !== "0" && address.substring(0, 1) !== "1" && address.substring(0, 1) !== "2" && address.substring(0, 1) !== "3"
+					&& address.substring(0, 1) !== "4" && address.substring(0, 1) !== "5" && address.substring(0, 1) !== "6" && address.substring(0, 1) !== "7"
+					&& address.substring(0, 1) !== "8" && address.substring(0, 1) !== "9") {
+					alert("Please enter a valid address 1");
+					return false;
+				}
+
+				if (!addr) {
+					alert("Please enter a valid address");
+					return false;
+				}
+				return true;
+			}
+		</script>
+
+
+
 </body>
+
 </html>
