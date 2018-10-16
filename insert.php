@@ -6,14 +6,19 @@
 	$query = "INSERT INTO siteusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', $hashedpassword, '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 
 	pg_query($dbconn,$query);
-	echo($hashedpassword);
+	if (pg_query($dbconn,$query))  {
+        $text = "Success";
+    }
+    else  {
+        $text "Failed, email in use";
+    }
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Success!</title>
+	<title><?php echo $text?></title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/signup.css" />
