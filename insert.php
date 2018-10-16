@@ -10,7 +10,7 @@
         $text = "Success";
     }
     else  {
-        $text "Failed, email in use";
+        $text = "Failed, email in use";
     }
 
 ?>
