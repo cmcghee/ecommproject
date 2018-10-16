@@ -12,8 +12,6 @@
         $text = "Failed, email in use";
     }
 
-    echo($query)
-
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +57,7 @@
 			</header>
 			<div class="box">
 				<li><a href="index.php">Return to the main page</a></li>
+				<p><?php echo $query; ?></p>
 			</div>
 		</section>
 
