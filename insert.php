@@ -54,7 +54,7 @@
 
 		<section id="main" class="container medium">
 			<header>
-				<h2>Success</h2>
+				<h2><?php echo $text?></h2>
 			</header>
 			<div class="box">
 				<li><a href="index.php">Return to the main page</a></li>
