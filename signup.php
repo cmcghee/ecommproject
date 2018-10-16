@@ -4,8 +4,151 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<html>
 
-<!-- Scripts -->
+<head>
+	<title>Sign Up</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/signup.css" />
+</head>
+
+<body class="is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#" class="icon fa-angle-down">Menu</a>
+						<ul>
+							<li><a href="signup.html">Sign Up</a></li>
+							<li><a href="login.html">Log In</a></li>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<!-- <li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option One</a></li>
+											<li><a href="#">Option Two</a></li>
+											<li><a href="#">Option Three</a></li>
+											<li><a href="#">Option Four</a></li>
+										</ul>
+									</li> -->
+						</ul>
+					<li><a href="index.html">Purchase</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Main -->
+		<section id="main" class="container medium">
+			<header>
+				<h2>Sign Up</h2>
+			</header>
+			<div class="box">
+				<form method="POST" action="<?php echo $action; ?>">
+					<div class="row gtr-50 gtr-uniform">
+						<div class="col-6 col-12-mobilep">
+							Name
+							<input type="text" name="name" id="name" value="" required=true/>
+						</div>
+						<div class="col-6 col-12-mobilep">
+							Email
+							<input type="email" name="email" id="email" value="" required/>
+						</div>
+						<div class="col-12">
+							Password
+							<input type="password" name="password" id="password" value="" required/>
+						</div>
+						<div class="col-12">
+							Retype Password
+							<input type="password" name="retype" id="retype" value="" />
+						</div>
+						<div class="col-12">
+							Address
+							<input type="text" name="address" id="address" value="" />
+						</div>
+						<div class="col-4 col-12-mobilep">
+							City
+							<input type="text" name="city" id="city" value="" />
+						</div>
+						<div class="col-4 col-12-mobilep">
+							State
+							<select name="State" required id="state">
+								<option value="Change">SELECT</option>
+								<option value="AL">AL</option>
+								<option value="AK">AK</option>
+								<option value="AZ">AZ</option>
+								<option value="AR">AR</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="DC">DC</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="IA">IA</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="ME">ME</option>
+								<option value="MD">MD</option>
+								<option value="MA">MA</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MS">MS</option>
+								<option value="MO">MO</option>
+								<option value="MT">MT</option>
+								<option value="NE">NE</option>
+								<option value="NV">NV</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NY">NY</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VT">VT</option>
+								<option value="VA">VA</option>
+								<option value="WA">WA</option>
+								<option value="WV">WV</option>
+								<option value="WI">WI</option>
+								<option value="WY">WY</option>
+							</select>
+						</div>
+						<div class="col-4 col-12-mobilep">
+							Zipcode
+							<input type="text" name="zip" id="zip" value="" />
+						</div>
+						<div class="col-12">
+							<ul class="actions special">
+								<!-- <li><input type="submit" value="Sign Up" /></li> -->
+								<input type="submit" value="submit" onclick="validate()" />
+							</ul>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -129,7 +272,7 @@
 
 		<script>
 			function isValidAddress(address) {
-				var addr = /^[a-zA-Z0-9\ \.]+$/.test(address);
+				var addr = /^[a-zA-Z0-9\ \.\#\.\.\.]+$/.test(address);
 				if (address === "") {
 					alert("Please enter a street address");
 					// address.focus();
@@ -142,6 +285,11 @@
 					return false;
 				}
 
+				if(!address.match(/[a-zA-Z]/)){
+					alert("Please enter a valid address");
+					return false;
+				}
+
 				if (!addr) {
 					alert("Please enter a valid address");
 					return false;
@@ -149,151 +297,6 @@
 				return true;
 			}
 		</script>
-<html>
-
-<head>
-	<title>Sign Up</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/signup.css" />
-</head>
-
-<body class="is-preload">
-	<div id="page-wrapper">
-
-		<!-- Header -->
-		<header id="header" class="alt">
-			<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
-			<nav id="nav">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li>
-						<a href="#" class="icon fa-angle-down">Menu</a>
-						<ul>
-							<li><a href="signup.php">Sign Up</a></li>
-							<li><a href="login.html">Log In</a></li>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<!-- <li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li> -->
-						</ul>
-					<li><a href="index.php">Purchase</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<!-- Main -->
-		<section id="main" class="container medium">
-			<header>
-				<h2>Sign Up</h2>
-			</header>
-			<div class="box">
-				<form method="POST" action="<?php echo $action; ?>">
-					<div class="row gtr-50 gtr-uniform">
-						<div class="col-6 col-12-mobilep">
-							Name
-							<input type="text" name="name" id="name" value="" required=true/>
-						</div>
-						<div class="col-6 col-12-mobilep">
-							Email
-							<input type="email" name="email" id="email" value="" required/>
-						</div>
-						<div class="col-12">
-							Password
-							<input type="password" name="password" id="password" value="" required/>
-						</div>
-						<div class="col-12">
-							Retype Password
-							<input type="password" name="retype" id="retype" value="" />
-						</div>
-						<div class="col-12">
-							Address
-							<input type="text" name="address" id="address" value="" />
-						</div>
-						<div class="col-4 col-12-mobilep">
-							City
-							<input type="text" name="city" id="city" value="" />
-						</div>
-						<div class="col-4 col-12-mobilep">
-							State
-							<select name="State" required id="state">
-								<option value="Change">SELECT</option>
-								<option value="AL">AL</option>
-								<option value="AK">AK</option>
-								<option value="AZ">AZ</option>
-								<option value="AR">AR</option>
-								<option value="CA">CA</option>
-								<option value="CO">CO</option>
-								<option value="CT">CT</option>
-								<option value="DE">DE</option>
-								<option value="DC">DC</option>
-								<option value="FL">FL</option>
-								<option value="GA">GA</option>
-								<option value="HI">HI</option>
-								<option value="ID">ID</option>
-								<option value="IL">IL</option>
-								<option value="IN">IN</option>
-								<option value="IA">IA</option>
-								<option value="KS">KS</option>
-								<option value="KY">KY</option>
-								<option value="LA">LA</option>
-								<option value="ME">ME</option>
-								<option value="MD">MD</option>
-								<option value="MA">MA</option>
-								<option value="MI">MI</option>
-								<option value="MN">MN</option>
-								<option value="MS">MS</option>
-								<option value="MO">MO</option>
-								<option value="MT">MT</option>
-								<option value="NE">NE</option>
-								<option value="NV">NV</option>
-								<option value="NH">NH</option>
-								<option value="NJ">NJ</option>
-								<option value="NM">NM</option>
-								<option value="NY">NY</option>
-								<option value="NC">NC</option>
-								<option value="ND">ND</option>
-								<option value="OH">OH</option>
-								<option value="OK">OK</option>
-								<option value="OR">OR</option>
-								<option value="PA">PA</option>
-								<option value="RI">RI</option>
-								<option value="SC">SC</option>
-								<option value="SD">SD</option>
-								<option value="TN">TN</option>
-								<option value="TX">TX</option>
-								<option value="UT">UT</option>
-								<option value="VT">VT</option>
-								<option value="VA">VA</option>
-								<option value="WA">WA</option>
-								<option value="WV">WV</option>
-								<option value="WI">WI</option>
-								<option value="WY">WY</option>
-							</select>
-						</div>
-						<div class="col-4 col-12-mobilep">
-							Zipcode
-							<input type="text" name="zip" id="zip" value="" />
-						</div>
-						<div class="col-12">
-							<ul class="actions special">
-								<!-- <li><input type="submit" value="Sign Up" /></li> -->
-								<input type="submit" value="submit" onclick="validate()" />
-							</ul>
-						</div>
-					</div>
-				</form>
-			</div>
-		</section>
-
-
 
 </body>
 
