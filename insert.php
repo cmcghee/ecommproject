@@ -12,6 +12,8 @@
         $text = "Failed, email in use";
     }
 
+    echo($query)
+
 ?>
 
 <!DOCTYPE html>
