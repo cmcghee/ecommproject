@@ -5,7 +5,6 @@
 
 	$query = "INSERT INTO siteusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', $hashedpassword, '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 
-	pg_query($dbconn,$query);
 	if (pg_query($dbconn,$query))  {
         $text = "Success";
     }
