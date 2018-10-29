@@ -18,7 +18,7 @@
 	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
 
 	/* Add a recipient. */
-	$mail->addAddress($_POST[email]);
+	$mail->addAddress($_POST['email']);
 
 	/* Set the subject. */
 	$mail->Subject = 'Account Created!';

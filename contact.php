@@ -1,3 +1,34 @@
+<?php
+
+if(isset($_POST['submit'])){
+	
+	/* Namespace alias (don't need Exception this time). */
+	use PHPMailer\PHPMailer\PHPMailer;
+
+	/* Include the Composer generated autoload.php file. */
+	require 'vendor/autoload.php';
+
+  	$name = $_POST['name'];
+  	$email = $_POST['email'];
+  	$message = $_POST['message'];
+	$mail = new PHPMailer\PHPMailer\PHPMailer();
+	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
+	$mail->addAddress($email, $name);
+	$mail->Subject  = 'Contact Us Submission';
+	$mail->Body     = "Thank you for contacting our service!";
+	if(!$mail->send()) {
+	  echo 'Message was not sent.';
+	  echo 'Mailer error: ' . $mail->ErrorInfo;
+	} else {
+	  echo 'Message has been sent.';
+	}
+	
+	//$result = mysqli_query($con, "INSERT INTO contact VALUES ('$name', '$email', '$message')");
+	
+}
+
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -48,7 +79,7 @@
 						<h2>Contact Us</h2>
 					</header>
 					<div class="box">
-						<form method="post" action="#">
+						<form method="POST" action="contact.php">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-6 col-12-mobilep">
 									<input type="text" name="name" id="name" value="" placeholder="Name" />
@@ -64,7 +95,7 @@
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
-										<li><input type="submit" value="Send Message" /></li>
+										<button type="submit" name="submit" class="btn btn-default submit">Send Message</button>
 									</ul>
 								</div>
 							</div>
