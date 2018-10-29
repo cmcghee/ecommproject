@@ -21,7 +21,7 @@
 									<li><a href="signup.php">Sign Up</a></li>
 									<li><a href="login.html">Log In</a></li>
 									<li><a href="about.html">About Us</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="contact.php">Contact</a></li>
 								</ul>
 							<li><a href="index.php">Purchase</a></li>
 						</ul>
