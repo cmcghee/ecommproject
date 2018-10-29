@@ -25,6 +25,35 @@
 	
 // }
 
+	use PHPMailer\PHPMailer\PHPMailer;
+
+	/* Include the Composer generated autoload.php file. */
+	require 'vendor/autoload.php';
+
+	$email = $_POST['email'];
+
+	/* Create a new PHPMailer object. */
+	$mail = new PHPMailer();
+
+	/* Set the mail sender. */
+	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
+
+	/* Add a recipient. */
+	$mail->addAddress($email);
+
+	/* Set the subject. */
+	$mail->Subject = 'Your Message has been Recieved!';
+
+	/* Set the mail message body. */
+	$mail->Body = 'Thanks for contacting us! We will get back to you shortly!';
+
+	if(!$mail->send()) {
+	  echo 'Message was not sent.';
+	  echo 'Mailer error: ' . $mail->ErrorInfo;
+	} else {
+	  echo 'Message has been sent.';
+	}
+
 ?>
 
 <!DOCTYPE HTML>
