@@ -11,9 +11,9 @@ if(isset($_POST['submit'])){
   	$name = $_POST['name'];
   	$email = $_POST['email'];
   	$message = $_POST['message'];
-	$mail = new PHPMailer\PHPMailer\PHPMailer();
+	$mail = new PHPMailer();
 	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
-	$mail->addAddress($email, $name);
+	$mail->addAddress($email);
 	$mail->Subject  = 'Contact Us Submission';
 	$mail->Body     = "Thank you for contacting our service!";
 	if(!$mail->send()) {
@@ -23,18 +23,11 @@ if(isset($_POST['submit'])){
 	  echo 'Message has been sent.';
 	}
 	
-	//$result = mysqli_query($con, "INSERT INTO contact VALUES ('$name', '$email', '$message')");
-	
 }
 
 ?>
 
 <!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Contact - Alpha by HTML5 UP</title>
