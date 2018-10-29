@@ -5,6 +5,34 @@
 
 	$query = "INSERT INTO currentusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', '$hashedpassword', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 
+	/* Namespace alias (don't need Exception this time). */
+	use PHPMailer\PHPMailer\PHPMailer;
+
+	/* Include the Composer generated autoload.php file. */
+	require 'vendor/autoload.php';
+
+	/* Create a new PHPMailer object. */
+	$mail = new PHPMailer();
+
+	/* Set the mail sender. */
+	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
+
+	/* Add a recipient. */
+	$mail->addAddress($_POST[email]);
+
+	/* Set the subject. */
+	$mail->Subject = 'Account Created!';
+
+	/* Set the mail message body. */
+	$mail->Body = 'Thanks for creating an account on our website! If you are getting this email, this means your account is ready for use!';
+
+	/* Finally send the mail. */
+	if (!$mail->send())
+	{
+	   /* PHPMailer error. */
+	   echo $mail->ErrorInfo;
+	}
+
 	if (pg_query($dbconn,$query))  {
         $text = "Success";
     }
@@ -57,7 +85,6 @@
 			</header>
 			<div class="box">
 				<li><a href="index.php">Return to the main page</a></li>
-				<p><?php echo $query; ?></p>
 			</div>
 		</section>
 
