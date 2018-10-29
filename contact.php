@@ -28,7 +28,7 @@
 	use PHPMailer\PHPMailer\PHPMailer;
 
 	/* Include the Composer generated autoload.php file. */
-	require 'vendor/autoload.php';
+	require('vendor/autoload.php');
 
 	$email = $_POST['email'];
 
