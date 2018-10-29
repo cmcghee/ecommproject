@@ -1,29 +1,29 @@
 <?php
 
-if(isset($_POST['submit'])){
+// if(isset($_POST['submit'])){
 	
-	/* Namespace alias (don't need Exception this time). */
-	use PHPMailer\PHPMailer\PHPMailer;
+// 	/* Namespace alias (don't need Exception this time). */
+// 	use PHPMailer\PHPMailer\PHPMailer;
 
-	/* Include the Composer generated autoload.php file. */
-	require 'vendor/autoload.php';
+// 	/* Include the Composer generated autoload.php file. */
+// 	require 'vendor/autoload.php';
 
-  	$name = $_POST['name'];
-  	$email = $_POST['email'];
-  	$message = $_POST['message'];
-	$mail = new PHPMailer();
-	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
-	$mail->addAddress($email);
-	$mail->Subject  = 'Contact Us Submission';
-	$mail->Body     = "Thank you for contacting our service!";
-	if(!$mail->send()) {
-	  echo 'Message was not sent.';
-	  echo 'Mailer error: ' . $mail->ErrorInfo;
-	} else {
-	  echo 'Message has been sent.';
-	}
+//   	$name = $_POST['name'];
+//   	$email = $_POST['email'];
+//   	$message = $_POST['message'];
+// 	$mail = new PHPMailer();
+// 	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
+// 	$mail->addAddress($email);
+// 	$mail->Subject  = 'Contact Us Submission';
+// 	$mail->Body     = "Thank you for contacting our service!";
+// 	if(!$mail->send()) {
+// 	  echo 'Message was not sent.';
+// 	  echo 'Mailer error: ' . $mail->ErrorInfo;
+// 	} else {
+// 	  echo 'Message has been sent.';
+// 	}
 	
-}
+// }
 
 ?>
 
