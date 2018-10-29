@@ -1,61 +1,3 @@
-<?php
-
-// if(isset($_POST['submit'])){
-	
-// 	/* Namespace alias (don't need Exception this time). */
-// 	use PHPMailer\PHPMailer\PHPMailer;
-
-// 	/* Include the Composer generated autoload.php file. */
-// 	require 'vendor/autoload.php';
-
-//   	$name = $_POST['name'];
-//   	$email = $_POST['email'];
-//   	$message = $_POST['message'];
-// 	$mail = new PHPMailer();
-// 	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
-// 	$mail->addAddress($email);
-// 	$mail->Subject  = 'Contact Us Submission';
-// 	$mail->Body     = "Thank you for contacting our service!";
-// 	if(!$mail->send()) {
-// 	  echo 'Message was not sent.';
-// 	  echo 'Mailer error: ' . $mail->ErrorInfo;
-// 	} else {
-// 	  echo 'Message has been sent.';
-// 	}
-	
-// }
-
-	use PHPMailer\PHPMailer\PHPMailer;
-
-	/* Include the Composer generated autoload.php file. */
-	require('vendor/autoload.php');
-
-	$email = $_POST['email'];
-
-	/* Create a new PHPMailer object. */
-	$mail = new PHPMailer();
-
-	/* Set the mail sender. */
-	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
-
-	/* Add a recipient. */
-	$mail->addAddress($email);
-
-	/* Set the subject. */
-	$mail->Subject = 'Your Message has been Recieved!';
-
-	/* Set the mail message body. */
-	$mail->Body = 'Thanks for contacting us! We will get back to you shortly!';
-
-	if(!$mail->send()) {
-	  echo 'Message was not sent.';
-	  echo 'Mailer error: ' . $mail->ErrorInfo;
-	} else {
-	  echo 'Message has been sent.';
-	}
-
-?>
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -101,7 +43,7 @@
 						<h2>Contact Us</h2>
 					</header>
 					<div class="box">
-						<form method="POST" action="contact.php">
+						<form method="POST" action="email.php">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-6 col-12-mobilep">
 									<input type="text" name="name" id="name" value="" placeholder="Name" />
