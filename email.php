@@ -6,9 +6,9 @@ if(isset($_POST['submit'])){
     $email= $_POST['email'];
     $message= $_POST['message'];
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
 
