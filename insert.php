@@ -55,7 +55,7 @@
 <body>
 	<!-- Header -->
 		<header id="header" class="alt">
-			<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
+			<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
 			<nav id="nav">
 				<ul>
 					<li><a href="index.php">Home</a></li>
