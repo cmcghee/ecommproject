@@ -36,7 +36,7 @@ try {
     $mail->send();
     echo 'Message has been sent';
 
-    $query = "INSERT INTO contact VALUES ('$name', '$email', '$message')"
+    $query = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')"
     pg_query($dbconn,$query)
 
 } catch (Exception $e) {
