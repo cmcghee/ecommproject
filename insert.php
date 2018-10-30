@@ -8,51 +8,46 @@
 
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-
 	if(isset($_POST['submit'])){
-    $email= $_POST['email'];
+	    $email= $_POST['email'];
 
-    require 'PHPMailer-master/src/Exception.php';
+	require 'PHPMailer-master/src/Exception.php';
 	require 'PHPMailer-master/src/PHPMailer.php';
 	require 'PHPMailer-master/src/SMTP.php';
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+	try {
+	    //Server settings
+	    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+	    $mail->isSMTP();                                      // Set mailer to use SMTP
+	    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+	    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+	    $mail->Username = 'glidetechcompany@gmail.com';                 // SMTP username
+	    $mail->Password = 'mcghee13';                           // SMTP password
+	    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+	    $mail->Port = 587;                                    // TCP port to connect to
 
-	/* Namespace alias (don't need Exception this time). */
-	use PHPMailer\PHPMailer\PHPMailer;
+	    //Recipients
+	    $mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
+	    $mail->addAddress($email);     // Add a recipient
 
-	/* Create a new PHPMailer object. */
-	$mail = new PHPMailer();
+	    //Content
+	    //$mail->isHTML(true);                                  // Set email format to HTML
+	    $mail->Subject = 'Account Created!';
+	    $mail->Body    = 'Thanks for creating an account!';
 
-	//Server settings
-    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'glidetechcompany@gmail.com';                 // SMTP username
-    $mail->Password = 'mcghee13';                           // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
-
-	/* Set the mail sender. */
-	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
-
-	/* Add a recipient. */
-	$mail->addAddress($email);
-
-	/* Set the subject. */
-	$mail->Subject = 'Account Created!';
-
-	/* Set the mail message body. */
-	$mail->Body = 'Thanks for creating an account on our website! If you are getting this email, this means your account is ready for use!';
+	    if (pg_query($dbconn,$query))  {
+        	$text = "Success";
+        	$mail->send();
+    	}
+    	else  {
+        	$text = "Failed, email in use";
+    	}
+	} catch (Exception $e) {
+	    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+	}}
+	else {
+	    echo "Message Not Sent";
 	}	
-
-	if (pg_query($dbconn,$query))  {
-        $text = "Success";
-        $mail->send();
-    }
-    else  {
-        $text = "Failed, email in use";
-    }
-
 ?>
 
 <!DOCTYPE html>
