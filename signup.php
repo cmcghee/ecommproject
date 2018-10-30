@@ -1,3 +1,7 @@
+<?php
+$action = '';
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -5,7 +9,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-
+		
 <!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -27,12 +31,10 @@
 				console.log(state);
 				if (!isValidName(name) || !isValidEmail(email) || !isPasswordOk(password) || !aretwopasswordssame(password, retype) ||
 					!isValidAddress(address) || !isCityOk(city) || !isStateSelect(state) || !isValidZipCode(zip)) {
-					<?php
-					$action = null;
-					?>
+					return
 				} else {
 					<?php
-					$action = "insert.php";
+						$action = "insert.php";
 					?>
 				}
 			}
@@ -189,7 +191,7 @@
 										</ul>
 									</li> -->
 						</ul>
-					<li><a href="index.html">Purchase</a></li>
+					<li><a href="index.php">Purchase</a></li>
 				</ul>
 			</nav>
 		</header>
