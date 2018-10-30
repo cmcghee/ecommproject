@@ -189,7 +189,7 @@
 										</ul>
 									</li> -->
 						</ul>
-					<li><a href="index.html">Purchase</a></li>
+					<li><a href="purchase.html">Purchase</a></li>
 				</ul>
 			</nav>
 		</header>
