@@ -33,6 +33,7 @@
     $mail->Subject = 'Contact Us Submission';
     $mail->Body    = 'Thanks for the feedback!';
 
+    $query = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')"
 
     if (pg_query($dbconn,$query))  {
         $text = "Success";
