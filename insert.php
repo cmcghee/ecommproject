@@ -8,34 +8,31 @@
 
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-	if(isset($_POST['submit'])){
-	    $email= $_POST['email'];
+    $email= $_POST['email'];
 
-		require 'PHPMailer-master/src/Exception.php';
-		require 'PHPMailer-master/src/PHPMailer.php';
-		require 'PHPMailer-master/src/SMTP.php';
-		$mail = new PHPMailer();                              // Passing `true` enables exceptions
-	    //Server settings
-	    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
-	    $mail->isSMTP();                                      // Set mailer to use SMTP
-	    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-	    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-	    $mail->Username = 'glidetechcompany@gmail.com';                 // SMTP username
-	    $mail->Password = 'mcghee13';                           // SMTP password
-	    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	    $mail->Port = 587;                                    // TCP port to connect to
+	require 'PHPMailer-master/src/Exception.php';
+	require 'PHPMailer-master/src/PHPMailer.php';
+	require 'PHPMailer-master/src/SMTP.php';
+	$mail = new PHPMailer();                              // Passing `true` enables exceptions
+    //Server settings
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'glidetechcompany@gmail.com';                 // SMTP username
+    $mail->Password = 'mcghee13';                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
 
-	    //Recipients
-	    $mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
-	    $mail->addAddress($email);     // Add a recipient
+    //Recipients
+    $mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
+    $mail->addAddress($email);     // Add a recipient
 
-	    //Content
-	    //$mail->isHTML(true);                                  // Set email format to HTML
-	    $mail->Subject = 'Account Created!';
-	    $mail->Body    = 'Thanks for creating an account!';
-	} else {
-	    echo "Message Not Sent";
-	}	
+    //Content
+    //$mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Account Created!';
+    $mail->Body    = 'Thanks for creating an account!';
+	
 
 	if (pg_query($dbconn,$query))  {
         $text = "Success";
