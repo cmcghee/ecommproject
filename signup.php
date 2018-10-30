@@ -190,7 +190,7 @@ $action = '';
 										</ul>
 									</li> -->
 						</ul>
-					<li><a href="index.php">Purchase</a></li>
+					<li><a href="purchase.html">Purchase</a></li>
 				</ul>
 			</nav>
 		</header>

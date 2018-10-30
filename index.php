@@ -23,7 +23,7 @@
 									<li><a href="about.html">About Us</a></li>
 									<li><a href="contact.php">Contact</a></li>
 								</ul>
-							<li><a href="index.php">Purchase</a></li>
+							<li><a href="purchase.html">Purchase</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -35,7 +35,7 @@
 					<ul class="actions special">
 						<li><a href="signup.html" class="button primary">Sign Up</a></li>
 						<li><a href="about.html" class="button primary">About Us</a></li>
-						<li><a href="index.php" class="button primary">Purchase</a></li>
+						<li><a href="purchase.html" class="button primary">Purchase</a></li>
 					</ul>
 				</section>
 
