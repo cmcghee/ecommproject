@@ -5,36 +5,49 @@
 
 	$query = "INSERT INTO currentusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', '$hashedpassword', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
+
+	if(isset($_POST['submit'])){
+    $email= $_POST['email'];
+
+    require 'PHPMailer-master/src/Exception.php';
+	require 'PHPMailer-master/src/PHPMailer.php';
+	require 'PHPMailer-master/src/SMTP.php';
+
 	/* Namespace alias (don't need Exception this time). */
 	use PHPMailer\PHPMailer\PHPMailer;
 
-	/* Include the Composer generated autoload.php file. */
-	require 'vendor/autoload.php';
-
 	/* Create a new PHPMailer object. */
 	$mail = new PHPMailer();
+
+	//Server settings
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'glidetechcompany@gmail.com';                 // SMTP username
+    $mail->Password = 'mcghee13';                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
 
 	/* Set the mail sender. */
 	$mail->setFrom('glidetechcompany@gmail.com', 'GlideTech');
 
 	/* Add a recipient. */
-	$mail->addAddress($_POST['email']);
+	$mail->addAddress($email);
 
 	/* Set the subject. */
 	$mail->Subject = 'Account Created!';
 
 	/* Set the mail message body. */
 	$mail->Body = 'Thanks for creating an account on our website! If you are getting this email, this means your account is ready for use!';
-
-	/* Finally send the mail. */
-	if (!$mail->send())
-	{
-	   /* PHPMailer error. */
-	   echo $mail->ErrorInfo;
-	}
+	}	
 
 	if (pg_query($dbconn,$query))  {
         $text = "Success";
+        $mail->send();
     }
     else  {
         $text = "Failed, email in use";
