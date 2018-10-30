@@ -171,7 +171,7 @@
 			<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
 			<nav id="nav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li>
 						<a href="#" class="icon fa-angle-down">Menu</a>
 						<ul>
