@@ -11,11 +11,10 @@
 	if(isset($_POST['submit'])){
 	    $email= $_POST['email'];
 
-	require 'PHPMailer-master/src/Exception.php';
-	require 'PHPMailer-master/src/PHPMailer.php';
-	require 'PHPMailer-master/src/SMTP.php';
-	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-	try {
+		require 'PHPMailer-master/src/Exception.php';
+		require 'PHPMailer-master/src/PHPMailer.php';
+		require 'PHPMailer-master/src/SMTP.php';
+		$mail = new PHPMailer();                              // Passing `true` enables exceptions
 	    //Server settings
 	    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
 	    $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -34,20 +33,18 @@
 	    //$mail->isHTML(true);                                  // Set email format to HTML
 	    $mail->Subject = 'Account Created!';
 	    $mail->Body    = 'Thanks for creating an account!';
-
-	    if (pg_query($dbconn,$query))  {
-        	$text = "Success";
-        	$mail->send();
-    	}
-    	else  {
-        	$text = "Failed, email in use";
-    	}
-	} catch (Exception $e) {
-	    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-	}}
-	else {
+	} else {
 	    echo "Message Not Sent";
 	}	
+
+	if (pg_query($dbconn,$query))  {
+        $text = "Success";
+        $mail->send();
+    }
+    else  {
+        $text = "Failed, email in use";
+    }
+
 ?>
 
 <!DOCTYPE html>
