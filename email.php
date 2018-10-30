@@ -1,19 +1,19 @@
 <?php
 
-//$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
+    $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-if(isset($_POST['submit'])){
-    $name= $_POST['name'];
-    $email= $_POST['email'];
-    $message= $_POST['message'];
+    $text = '';
 
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
-$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-try {
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $message = $_POST['message'];
+
+    require 'PHPMailer-master/src/Exception.php';
+    require 'PHPMailer-master/src/PHPMailer.php';
+    require 'PHPMailer-master/src/SMTP.php';
+    $mail = new PHPMailer();                              // Passing `true` enables exceptions
     //Server settings
     $mail->SMTPDebug = 0;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
@@ -33,18 +33,14 @@ try {
     $mail->Subject = 'Contact Us Submission';
     $mail->Body    = 'Thanks for the feedback!';
 
-    $mail->send();
-    echo 'Message has been sent';
 
-    // $query = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')"
-    // pg_query($dbconn,$query)
-
-} catch (Exception $e) {
-    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-}}
-else {
-    echo "Message Not Sent";
-}
+    if (pg_query($dbconn,$query))  {
+        $text = "Success";
+        $mail->send();
+    }
+    else  {
+        $text = "Failed";
+    }
 
 ?>
 
