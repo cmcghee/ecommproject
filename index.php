@@ -33,7 +33,7 @@
 					<h2>GlideTech</h2>
 					<p>Self-Powered Chairs to Boost Performance and Cleanliness</p>
 					<ul class="actions special">
-						<li><a href="signup.html" class="button primary">Sign Up</a></li>
+						<li><a href="signup.php" class="button primary">Sign Up</a></li>
 						<li><a href="about.html" class="button primary">About Us</a></li>
 						<li><a href="purchase.html" class="button primary">Purchase</a></li>
 					</ul>
