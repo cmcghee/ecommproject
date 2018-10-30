@@ -29,8 +29,7 @@ $action = '';
 				var state = document.getElementById('state').value;
 				var zip = document.getElementById('zip').value;
 				console.log(state);
-				if (!isValidName(name) || !isValidEmail(email) || !isPasswordOk(password) || !aretwopasswordssame(password, retype) ||
-					!isValidAddress(address) || !isCityOk(city) || !isStateSelect(state) || !isValidZipCode(zip)) {
+				if (!isValidName(name) || !isValidEmail(email) || !isPasswordOk(password) || !aretwopasswordssame(password, retype) || !isValidAddress(address) || !isCityOk(city)|| !isStateSelect(state) || !isValidZipCode(zip)) {
 					return
 				} else {
 					<?php
