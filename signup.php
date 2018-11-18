@@ -11,13 +11,6 @@ $action = '';
 <html>
 		
 <!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
 		<script>
 			function validate() {
 				var name = document.getElementById('name').value;
@@ -169,31 +162,22 @@ $action = '';
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
-			<nav id="nav">
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li>
-						<a href="#" class="icon fa-angle-down">Menu</a>
+					<a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="50%" /></span>
+					<nav id="nav">
 						<ul>
-							<li><a href="signup.php">Sign Up</a></li>
-							<li><a href="login.html">Log In</a></li>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="contact.php">Contact</a></li>
-							<!-- <li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li> -->
+							<li><a href="index.php">Home</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">Menu</a>
+								<ul>
+									<li><a href="signup.php">Sign Up</a></li>
+									<li><a href="login.html">Log In</a></li>
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="contact.php">Contact</a></li>
+								</ul>
+							<li><a href="purchase.html">Purchase</a></li>
 						</ul>
-					<li><a href="purchase.html">Purchase</a></li>
-				</ul>
-			</nav>
-		</header>
+					</nav>
+				</header>
 
 		<!-- Main -->
 		<section id="main" class="container medium">
@@ -298,7 +282,14 @@ $action = '';
 				</form>
 			</div>
 		</section>
-
+		<!--Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 </body>
 
 </html>

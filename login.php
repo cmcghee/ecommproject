@@ -44,7 +44,7 @@ else  {
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
+					<a href="index.html"></a><span class="image featured"><img src="images/logo.png" width="50%" /></span>
 					<nav id="nav">
 						<ul>
 							<li><a href="index.php">Home</a></li>
@@ -82,7 +82,7 @@ else  {
 									<input type="email" name="email" id="email" value="" placeholder="Email" />
 								</div>
 								<div class="col-12">
-									<input type="text" name="subject" id="subject" value="" placeholder="Password" />
+									<input type="password" name="password" id="password" value="" placeholder="Password" />
 								</div>
 								<div class="col-12">
 									<ul class="actions special">

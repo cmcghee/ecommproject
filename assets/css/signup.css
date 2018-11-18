@@ -2245,7 +2245,7 @@
 /* Box */
 
 	.box {
-		background: #bbb;
+		background: #fff;
 		border-radius: 6px;
 		box-shadow: 0 2px 0 0 #e5e5e5;
 		margin: 0 0 2em 0;
@@ -2382,7 +2382,7 @@
 		.icon.major {
 			background: #666;
 			border-radius: 100%;
-			color: #bbbbbb;
+			color: #ffffff;
 			cursor: default;
 			display: inline-block;
 			height: 5.5em;
@@ -2923,7 +2923,7 @@
 	}
 
 		#header h1 {
-			color: black;
+			color: inherit;
 			height: inherit;
 			left: 1.25em;
 			line-height: inherit;
@@ -2934,7 +2934,7 @@
 		}
 
 			#header h1 a {
-				color: #bbb;
+				color: black;
 				font-weight: 400;
 				border: 0;
 			}
@@ -2973,13 +2973,14 @@
 
 					#header nav > ul > li a:not(.button) {
 						color: black;
+						font-style: bold;
 						display: inline-block;
 						text-decoration: none;
 						border: 0;
 					}
 
 						#header nav > ul > li a:not(.button).icon:before {
-							color: black;
+							color: #999;
 							margin-right: 0.5em;
 						}
 
@@ -3097,7 +3098,7 @@
 				transition: none;
 				border: 0;
 				border-top: solid 1px #f2f2f2;
-				color: black;
+				color: inherit;
 				display: block;
 				padding: 0.15em 1em;
 			}
@@ -3145,7 +3146,7 @@
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
-		color: #fff;
+		color: black;
 		padding: 12em 0 20em 0;
 		text-align: center;
 	}
@@ -3155,7 +3156,7 @@
 		}
 
 		#banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: #fff;
+			color: black;
 		}
 
 		#banner h2 {
