@@ -1,4 +1,12 @@
 <?php
+    Session_start();
+    if (!isset($_SESSION["lojamusica"]))
+            header("Location:errorlogin.php");
+    if ($_SESSION["lojamusica"]!="OK")
+			header("Location:errorlogin.php");		
+?>
+
+<?php
 
 Session_start();
 Session_destroy();
@@ -105,3 +113,11 @@ else  {
 
 	</body>
 </html>
+
+
+
+<?php
+Session_start();
+Session_destroy();
+ echo "<script language='javascript'> window.top.location.href = 'login2.html';                </script>";
+  ?>
