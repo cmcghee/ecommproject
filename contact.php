@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Contact - Alpha by HTML5 UP</title>
+    <title>Contact</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/contact.css" />
@@ -11,7 +11,7 @@
 
       <!-- Header -->
         <header id="header" class="alt">
-          <a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
+          <a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="50%" /></span>
           <nav id="nav">
             <ul>
               <li><a href="index.php">Home</a></li>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-12">
                   <ul class="actions special">
-                    <button type="submit" name="submit" class="btn btn-default submit">Send Message</button>
+                    <button type="submit" name="submit" class="button">Send Message</button>
                   </ul>
                 </div>
               </div>
