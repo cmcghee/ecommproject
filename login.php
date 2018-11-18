@@ -5,7 +5,7 @@ Session_destroy();
 
 mysql_connect("localhost","root","") or die("no connection");
 mysql_select_db("d3au1dsacafa29");
-$query = "SELECT username, password FROM login WHERE username='".$_POST["user"]."'";
+$query = "SELECT email, password FROM login WHERE email='".$_POST["user"]."'";
 $results = mysql_query($query) or die(mysql_error());
 
 $num = mysql_num_rows($results);
@@ -21,7 +21,7 @@ else  {
         header("Location:about.html");       
     }
     else
-        header("Location:login.html");
+        header("Location:login.php");
 
 }
 
@@ -105,9 +105,3 @@ else  {
 
 	</body>
 </html>
-
-<?php
-Session_start();
-Session_destroy();
- echo "<script language='javascript'> window.top.location.href = 'login.html';                </script>";
-?>
