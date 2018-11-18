@@ -50,9 +50,9 @@
                     <section class="box special">
                         <span class="image featured"><img src="images/chair.jpg" alt="" /></span>
                         <h3>Standard Chair.</h3>
-                        <p>The Standard chair. Nothing more nothing less.<br /><br /></p>
-                        <p>100 USD</p>
-                        <div class = "dataplswork"></div>
+                        <p>The Standard chair. Nothing more nothing less.<br /><br/><br/></p>
+                        <p class="dataplswork" id="hun"></p>
+                        <br/>
                         <form action="https://test.bitpay.com/checkout" method="post">
                             <input type="hidden" name="action" value="checkout" />
                             <input type="hidden" name="posData" value="" />
@@ -69,9 +69,9 @@
                         <span class="image featured"><img src="images/chair.jpg" alt="" /></span>
                         <h3>Technological package</h3>
                         <p>Includes USB and conventional charging ports, AC/heating capabilities, Massaging
-                            capabilities, phone integration, and bluetooth integration</p>
-                        <p>1000 USD</p>
+                            capabilities, phone integration, and bluetooth integration<br/><br/></p>
                         <div class = "dataplswork"></div>
+                        <br/>
                         <form action="https://test.bitpay.com/checkout" method="post">
                             <input type="hidden" name="action" value="checkout" />
                             <input type="hidden" name="posData" value="" />
@@ -104,11 +104,16 @@
                 xmlhttp.open("GET", url, true);
                 xmlhttp.send();
                 function parseJson(json) {
-                    var usdValue = "1 BTC equals to $" + json["bpi"]["USD"]["rate"];
+                    var usdValue = json["bpi"]["USD"]["rate"];
+                    console.log(typeof usdValue)
                     let places = document.querySelectorAll(".dataplswork");
                     console.log(places);
                     for (place of places) {
-                        place.innerHTML = usdValue;
+                        console.log(usdValue)
+                        if(place.id == "hun"){place.innerHTML = "100 USD (" + (100/parseFloat(usdValue.replace(",",""))).toFixed(5) + " BTC)";}
+                        else{
+                            place.innerHTML = "1000 USD (" + (1000/parseFloat(usdValue.replace(",",""))).toFixed(5) + " BTC)";
+                        }
                     }
                 }
     
