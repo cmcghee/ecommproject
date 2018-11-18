@@ -1,3 +1,31 @@
+<?php
+
+Session_start();
+Session_destroy();
+
+mysql_connect("localhost","root","") or die("no connection");
+mysql_select_db("d3au1dsacafa29");
+$query = "SELECT username, password FROM login WHERE username='".$_POST["user"]."'";
+$results = mysql_query($query) or die(mysql_error());
+
+$num = mysql_num_rows($results);
+if ($num == 0)
+    echo "Login information not found!";
+else  {
+    $row = mysql_fetch_array($results);
+    if ($row["password"] == $_POST["pass"])
+    {
+    Session_start();
+    $_SESSION["email"] = $_POST["user"];
+    $_SESSION["d3au1dsacafa29"] = "OK";
+        header("Location:about.html");       
+    }
+    else
+        header("Location:login.html");
+
+}
+
+?>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -77,3 +105,9 @@
 
 	</body>
 </html>
+
+<?php
+Session_start();
+Session_destroy();
+ echo "<script language='javascript'> window.top.location.href = 'login.html';                </script>";
+?>
