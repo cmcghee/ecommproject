@@ -1,9 +1,9 @@
 <?php
     Session_start();
-    if (!isset($_SESSION["lojamusica"]))
-            header("Location:errorlogin.php");
-    if ($_SESSION["lojamusica"]!="OK")
-			header("Location:errorlogin.php");		
+    if (!isset($_SESSION["d3au1dsacafa29"]))
+            header("Location:login.php");
+    if ($_SESSION["d3au1dsacafa29"]!="OK")
+			header("Location:login.php");		
 ?>
 
 <?php
@@ -119,5 +119,5 @@ else  {
 <?php
 Session_start();
 Session_destroy();
- echo "<script language='javascript'> window.top.location.href = 'login2.html';                </script>";
+ echo "<script language='javascript'> window.top.location.href = 'login.php';                </script>";
   ?>
