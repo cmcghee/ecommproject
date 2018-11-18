@@ -22,6 +22,7 @@
 									<li><a href="login.html">Log In</a></li>
 									<li><a href="about.html">About Us</a></li>
 									<li><a href="contact.php">Contact</a></li>
+									<li><a href="home.php">test</a></li>
 								</ul>
 							<li><a href="purchase.html">Purchase</a></li>
 						</ul>
