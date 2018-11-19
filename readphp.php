@@ -36,11 +36,11 @@
 <div class="divD">
 <!-- <p>Click On Menu</p> -->
 <?php
-$connection = mysql_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646"); // Establishing Connection with Server
+$connection = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646"); // Establishing Connection with Server
 // $db = mysql_select_db("company", $connection); // Selecting Database
 //MySQL Query to read data
-$query = mysql_query("SELECT * FROM d3au1dsacafa29", $connection);
-while ($row = mysql_fetch_array($query)) {
+$query = pg_query("SELECT * FROM d3au1dsacafa29", $connection);
+while ($row = pg_fetch_array($query)) {
 //echo "<b><a href="readphp.php?id={$row['email']}">{$row['name']}</a></b>";
 echo "<br />";
 }
@@ -49,8 +49,8 @@ echo "<br />";
 <?php
 if (isset($_GET['email'])) {
 $id = $_GET['email'];
-$query1 = mysql_query("SELECT * FROM d3au1dsacafa29 WHERE id=$id", $connection);
-while ($row1 = mysql_fetch_array($query1)) {
+$query1 = pg_query("SELECT * FROM d3au1dsacafa29 WHERE id=$id", $connection);
+while ($row1 = pg_fetch_array($query1)) {
 ?>
 <div class="form">
 <h2>---Details---</h2>
@@ -70,7 +70,7 @@ while ($row1 = mysql_fetch_array($query1)) {
 </div>
 </div>
 <?php
-mysql_close($connection); // Closing Connection with Server
+//pg_close($connection); // Closing Connection with Server
 ?>
 </body>
 </html>
