@@ -48,14 +48,16 @@ f
                 $id = $_GET['cm4rn@virginia.edu'];
                 $query = pg_query("SELECT * FROM currentusers WHERE id=$id", $dbconn);
                 while ($row1 = pg_fetch_array($query)) {
-           
+           ?>
+           <div class="form">
             <h2>---Details---</h2>
-            //Displaying Data Read From Database
-            <span>Name:</span> echo $row1['name'];
-            <span>E-mail:</span> echo $row1['email'];
-            <span>Address:</span> echo $row1['address'];
-            
-                }
+            <!-- Displaying Data Read From Database -->
+            <span>Name:</span> <?php echo $row1['name']; ?>
+            <span>E-mail:</span> <?php echo $row1['email']; ?>
+            <span>Address:</span> <?php echo $row1['address']; ?>
+            </div>
+            <?php
+            }
             }
             ?>
 
