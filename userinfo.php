@@ -52,7 +52,7 @@ f
            <div class="form">
             <h2>---Details---</h2>
             <!-- Displaying Data Read From Database -->
-            <span>Name:</span> <?php echo $row1['name']; ?>
+            <p> Name:</p> <?php echo $row1['name']; ?>
             <span>E-mail:</span> <?php echo $row1['email']; ?>
             <span>Address:</span> <?php echo $row1['address']; ?>
             </div>
