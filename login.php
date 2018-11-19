@@ -89,7 +89,7 @@
 
 		$query = "SELECT email FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
-		$hashedpassword = pg_fetch_result($result, 2, 0)
+		$hashedpassword = pg_fetch_result($result, 2, 0);
 
 		if (password_verify($password, $hashedpassword){
 			echo "<script type='text/javascript'>alert('$hashedpassword')</script>"
