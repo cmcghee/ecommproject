@@ -14,43 +14,6 @@
 	</head>
 	<body class="is-preload">
 
-	<?php
-    Session_start();
-    if (!isset($_SESSION["d3au1dsacafa29"]))
-            header("Location:login.php");
-    if ($_SESSION["d3au1dsacafa29"]!="OK")
-			header("Location:login.php");		
-?>
-
-<?php
-
-Session_start();
-Session_destroy();
-
-mysql_connect("localhost","root","") or die("no connection");
-mysql_select_db("d3au1dsacafa29");
-$query = "SELECT email, password FROM login WHERE email='".$_POST["user"]."'";
-$results = mysql_query($query) or die(mysql_error());
-
-$num = mysql_num_rows($results);
-if ($num == 0)
-    echo "Login information not found!";
-else  {
-    $row = mysql_fetch_array($results);
-    if ($row["password"] == $_POST["pass"])
-    {
-    Session_start();
-    $_SESSION["email"] = $_POST["user"];
-    $_SESSION["d3au1dsacafa29"] = "OK";
-        header("Location:about.html");       
-    }
-    else
-        header("Location:login.php");
-
-}
-
-?>
-
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -76,7 +39,7 @@ else  {
 										</ul>
 									</li> -->
 								</ul>
-							<li><a href="purchase.html">Purchase</a></li>
+							<li><a href="login.php">Purchase</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -113,12 +76,6 @@ else  {
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
-			<?php
-Session_start();
-Session_destroy();
- echo "<script language='javascript'> window.top.location.href = 'login.php';                </script>";
-  ?>
 
 
 	</body>
