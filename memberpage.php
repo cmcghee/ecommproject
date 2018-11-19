@@ -20,7 +20,7 @@
 								<a href="#" class="icon fa-angle-down">Options</a>
 								<ul>
 									<!-- we want to keep about and contact -->
-									<li><a href="memberabout.html">View Profile</a></li>
+									<li><a href="userinfo.php">View Profile</a></li>
 									<li><a href="memberabout.html">About Us</a></li>
 									<li><a href="membercontact.php">Contact</a></li>
 									<!--view profile in this dropdown-->
