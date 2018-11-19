@@ -41,22 +41,6 @@
 
 			<!-- Main -->
 				<section id="main" class="container">
-
-					<section class="box special">
-						<header class="major">
-							<h2>Office chairs that provide comfort and agility,
-							<br />
-							and act as janitors in off-hours </h2>
-							<p>Our chairs move about the room when commanded,
-								facilitated by special sensors and cameras, <br />
-								clean your floors while not in use,
-								and arrange themselves neatly when not performing any task.</p>
-						</header>
-						<iframe width="800" height="420"
-							src="https://www.youtube.com/embed/FLEgvD7iG-M">
-						</iframe>
-					</section>
-
 					<section class="box special features">
 						<div class="features-row">
 							<section>
