@@ -37,7 +37,7 @@
 					<h2>GlideTech</h2>
 					<p>Welcome!</p>
 					<ul class="actions special">
-						<li><a href="purchase.php" class="button primary">Purchase</a></li>
+						<li><a href="purchase.html" class="button primary">Purchase</a></li>
 						<!-- check this - added .php extensionto purchase but not able to test it rn -->
 					</ul>
 				</section>

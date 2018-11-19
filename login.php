@@ -39,7 +39,7 @@
 										</ul>
 									</li> -->
 								</ul>
-							<li><a href="login.php">Purchase</a></li>
+							<li><a href="signup.php">Purchase</a></li>
 						</ul>
 					</nav>
 				</header>

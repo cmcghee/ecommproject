@@ -23,7 +23,7 @@
 									<li><a href="about.html">About Us</a></li>
 									<li><a href="contact.php">Contact</a></li>
 								</ul>
-							<li><a href="login.php">Purchase</a></li>
+							<li><a href="product_description.html">Product Description</a></li>
 						</ul>
 					</nav>
 				</header>
