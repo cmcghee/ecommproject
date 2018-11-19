@@ -42,7 +42,7 @@ f
             $id = $_GET['email'];
             $query = pg_query("SELECT * FROM currentusers WHERE email=\'cm4rn@virginia.edu\'", $dbconn);
 
-             echo $query['email'];
+             echo $query;
              
              ?>
            
