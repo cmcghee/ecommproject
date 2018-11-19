@@ -83,9 +83,4 @@ $query = mysql_query("SELECT * FROM d3au1dsacafa29", $dbconn);
   </body>
 
 
-<span>Name:</span> <?php echo $row1['name']; ?>
-<span>E-mail:</span> <?php echo $row1['email']; ?>
-<span>Address:</span> <?php echo $row1['address']; ?>
-
-
 </html>
