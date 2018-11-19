@@ -43,6 +43,40 @@ f
             $arr = mysql_fetch_array($query);
             $num = mysql_numrows($query);
            ?>
+
+
+            <?php if($num > 0){ ?>
+<table border="1" cellpadding="3">
+<tr><td colspan="2" align="center">Your Info</td></tr>
+<tr>
+ <td>Name: <?php echo $arr['name']; ?></td>
+</tr>
+
+<tr>
+ <td>Email: <?php echo $arr['email']; ?></td>
+</tr>
+
+<tr>
+ <td>Address: <?php echo $arr['address']; ?></td>
+</tr>
+
+<tr>
+ <td>City: <?php echo $arr['city']; ?></td>
+</tr>
+
+<tr>
+ <td>State: <?php echo $arr['state']; ?></td>
+</tr>
+
+<tr>
+ <td>Zipcode: <?php echo $arr['zipcode']; ?></td>
+</tr>
+
+</table>
+<?php }else{ ?>
+ User not found.
+<?php } ?>
+
           <!-- <div class="box">
             <form method="post" action="email.php">
               <div class="row gtr-50 gtr-uniform">
