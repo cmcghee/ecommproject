@@ -1,7 +1,7 @@
 <?php
 $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
-$query= mysql_query("SELECT * FROM d3au1dsacafa29 WHERE email = 'cm4rn@virginia.edu' ")or die(mysql_error());
+$query= mysql_query("SELECT * FROM d3au1dsacafa29", $dbconn);
 // $arr = mysql_fetch_array($query);
 // $num = mysql_numrows($query);
 ?>
@@ -83,37 +83,9 @@ $query= mysql_query("SELECT * FROM d3au1dsacafa29 WHERE email = 'cm4rn@virginia.
   </body>
 
 
-<!-- <?php if($num > 0){ ?>
-<table border="1" cellpadding="3">
-<tr><td colspan="2" align="center">Your Info</td></tr>
-<tr>
- <td>Name: <?php echo $arr['name']; ?></td>
-</tr>
-
-<tr>
- <td>Email: <?php echo $arr['email']; ?></td>
-</tr>
-
-<tr>
- <td>Address: <?php echo $arr['address']; ?></td>
-</tr>
-
-<tr>
- <td>City: <?php echo $arr['city']; ?></td>
-</tr>
-
-<tr>
- <td>State: <?php echo $arr['state']; ?></td>
-</tr>
-
-<tr>
- <td>Zipcode: <?php echo $arr['zipcode']; ?></td>
-</tr>
-
-</table>
-<?php }else{ ?>
- User not found.
-<?php } ?> -->
+<span>Name:</span> <?php echo $row1['name']; ?>
+<span>E-mail:</span> <?php echo $row1['email']; ?>
+<span>Address:</span> <?php echo $row1['address']; ?>
 
 
 </html>
