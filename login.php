@@ -92,7 +92,7 @@
 		$hashedpassword = pg_fetch_result($result, 2, 0);
 
 		if (password_verify($password, $hashedpassword){
-			echo "<script type='text/javascript'>alert('$hashedpassword')</script>"
+			echo "<script type='text/javascript'>alert('$hashedpassword')</script>";
 		}
 
 		// if (pg_num_rows($result) != 1){
