@@ -45,8 +45,8 @@ f
 
 
             if (isset($_GET['email'])) {
-                $id = $_GET['email'];
-                $query = mysql_query("SELECT * FROM currentusers WHERE id=$id", $dbconn);
+                $id = $_GET['cm4rn@virginia.edu'];
+                $query = pg_query("SELECT * FROM currentusers WHERE id=$id", $dbconn);
                 while ($row1 = pg_fetch_array($query)) {
            ?>
            <div class="form">
@@ -54,7 +54,6 @@ f
             <!-- Displaying Data Read From Database -->
             <span>Name:</span> <?php echo $row1['name']; ?>
             <span>E-mail:</span> <?php echo $row1['email']; ?>
-            <!-- <span>Contact No:</span> <?php echo $row1['employee_contact']; ?> -->
             <span>Address:</span> <?php echo $row1['address']; ?>
             </div>
             <?php
