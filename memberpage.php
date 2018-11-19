@@ -33,14 +33,11 @@
 				</header>
 
 			<!-- Banner -->
+				<div id="mask">
 				<section id="banner">
-					<h2>GlideTech</h2>
-					<p>Welcome!</p>
-					<ul class="actions special">
-						<li><a href="purchase.html" class="button primary">Purchase</a></li>
-						<!-- check this - added .php extensionto purchase but not able to test it rn -->
-					</ul>
+					<h2>Welcome to GlideTech</h2>
 				</section>
+				</div>
 
 			<!-- Main -->
 				<section id="main" class="container">
