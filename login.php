@@ -94,6 +94,8 @@
 
 		if (password_verify($password, $hashedpassword)){
 			echo "<script type='text/javascript'>alert('$hashedpassword')</script>";
+		} else {
+			echo "<script type='text/javascript'>alert('$hashedpassword')</script>";
 		}
 
 		// if (pg_num_rows($result) != 1){
