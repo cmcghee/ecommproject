@@ -18,12 +18,11 @@
               <li>
                 <a href="#" class="icon fa-angle-down">Menu</a>
                 <ul>
-                  <li><a href="signup.php">Sign Up</a></li>
-                  <li><a href="login.php">Log In</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="contact.php">Contact</a></li>
+                <li><a href="memberabout.html">View Profile</a></li> <!-- obviously needs to have a new link when we have it -->
+                <li><a href="memberabout.html">About Us</a></li>
+                <li><a href="membercontact.php">Contact</a></li>
                 </ul>
-              <li><a href="product_description.html">Product Description</a></li>
+                <li><a href="index.php">Logout</a></li>
             </ul>
           </nav>
         </header>
