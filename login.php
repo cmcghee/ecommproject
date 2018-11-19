@@ -89,14 +89,18 @@
 
 		$query = "SELECT email FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
+		$hashedpassword = pg_fetch_result($result, 2, 0)
 
-		if (pg_num_rows($result) != 1){
-			echo "<script type='text/javascript'>alert('$query')</script>";
+		if (password_verify($password, $hashedpassword){
+			echo "<script type='text/javascript'>alert('$hashedpassword')</script>"
 		}
-		else{
-			echo "<script type='text/javascript'>alert('$query')</script>";
-			//echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
-		}
+
+		// if (pg_num_rows($result) != 1){
+		// 	echo "<script type='text/javascript'>alert('$query')</script>";
+		// }
+		// else{
+		// 	echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
+		// }
 		}
 		?>
 
