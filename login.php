@@ -87,11 +87,11 @@
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$_SESSION['login_user']=$email; 
 
-		$query = "SELECT email FROM currentusers WHERE email='$email' and password='$password'";
+		$query = "SELECT email FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
 
 		if (pg_num_rows($result) != 1){
-			echo "<script type='text/javascript'>alert('$password')</script>";
+			echo "<script type='text/javascript'>alert('$query')</script>";
 		}
 		else{
 			echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
