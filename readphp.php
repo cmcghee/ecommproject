@@ -41,7 +41,7 @@ $connection = mysql_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com por
 //MySQL Query to read data
 $query = mysql_query("SELECT * FROM d3au1dsacafa29", $connection);
 while ($row = mysql_fetch_array($query)) {
-echo "<b><a href="readphp.php?id={$row['email']}">{$row['name']}</a></b>";
+//echo "<b><a href="readphp.php?id={$row['email']}">{$row['name']}</a></b>";
 echo "<br />";
 }
 ?>
