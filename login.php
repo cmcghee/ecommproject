@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -7,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Contact - Alpha by HTML5 UP</title>
+		<title>Login</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/login.css" />
@@ -50,17 +49,17 @@
 						<h2>Log In</h2>
 					</header>
 					<div class="box">
-						<form method="post" action="#">
+						<form method="GET" action="<?php echo $action; ?>">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-12">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
+									<input type="email" name="email" id="email" value="" placeholder="Email" required />
 								</div>
 								<div class="col-12">
-									<input type="password" name="password" id="password" value="" placeholder="Password" />
+									<input type="password" name="password" id="password" value="" placeholder="Password" required />
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
-										<li><input type="submit" value="Log In" /></li>
+										<li><input type="submit" value="Log In" onclick="send()"/></li>
 									</ul>
 								</div>
 							</div>
@@ -76,7 +75,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function send(){
+					<?php
+   	$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
+	$email = $_GET['email'];
+	$password = $_GET['password'];
+	$query = "SELECT email, password FROM currentusers WHERE email=$email";
+	$pass = pg_query($dbconn,$query) or die('Email not found.');
+	if(password_verify($password,$pass)){
+		Header("location: memberpage.php");
+	}
+	else{
+		$message = "Wrong password";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+		Header("location: memberpage.php");
+	}
 
+
+?>
+				}
+			</script>
 
 	</body>
 </html>
