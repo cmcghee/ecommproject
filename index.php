@@ -24,7 +24,7 @@
 									<li><a href="contact.php">Contact</a></li>
 								</ul>
 							<li><a href="product_description.html">Product Description</a></li>
-							<li><a href="member_homepage.php">Member Homepage</a></li>
+							<li><a href="memberpage.php">Member Homepage</a></li>
 						</ul>
 					</nav>
 				</header>
