@@ -20,7 +20,7 @@ $db = mysql_select_db("company", $connection); // Selecting Database
 //MySQL Query to read data
 $query = mysql_query("SELECT * FROM d3au1dsacafa29", $connection);
 while ($row = mysql_fetch_array($query)) {
-echo "<b><a href="readphp.php?id={$row['email']}">{$row['name']}</a></b>";
+//echo "<b><a href="readphp.php?id={$row['email']}">{$row['name']}</a></b>";
 echo "<br />";
 }
 ?>
@@ -28,7 +28,7 @@ echo "<br />";
 <?php
 if (isset($_GET['email'])) {
 $id = $_GET['email'];
-$query1 = mysql_query("SELECT * FROM d3au1dsacafa29 WHERE id=$email", $connection);
+$query1 = mysql_query("SELECT * FROM d3au1dsacafa29 WHERE id=$id", $connection);
 while ($row1 = mysql_fetch_array($query1)) {
 ?>
 <div class="form">
