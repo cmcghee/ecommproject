@@ -22,6 +22,7 @@
                 <li><a href="memberabout.html">About Us</a></li>
                 <li><a href="membercontact.php">Contact</a></li>
                 </ul>
+                <li><a href="purchase.html">Purchase</a></li>
                 <li><a href="index.php">Logout</a></li>
             </ul>
           </nav>
