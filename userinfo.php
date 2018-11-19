@@ -1,17 +1,4 @@
-<?php
-$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
-
-$query = mysql_query("SELECT * FROM d3au1dsacafa29", $dbconn);
-// $arr = mysql_fetch_array($query);
-// $num = mysql_numrows($query);
-?>
-
-
-
-
-
-
-
+f
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -46,6 +33,16 @@ $query = mysql_query("SELECT * FROM d3au1dsacafa29", $dbconn);
           <header>
             <h2>View Your Information</h2>
           </header>
+
+
+
+          <?php
+            $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
+
+            $query = mysql_query("SELECT * FROM d3au1dsacafa29", $dbconn);
+            // $arr = mysql_fetch_array($query);
+            // $num = mysql_numrows($query);
+           ?>
           <!-- <div class="box">
             <form method="post" action="email.php">
               <div class="row gtr-50 gtr-uniform">
