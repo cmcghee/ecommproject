@@ -48,13 +48,17 @@
 						<h2>Log In</h2>
 					</header>
 					<div class="box">
-						<form method="post" action="#">
+						<form method="post">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-12">
 									<input type="email" name="email" id="email" value="" placeholder="Email" />
 								</div>
 								<div class="col-12">
+<<<<<<< HEAD:login.php
+									<input type="text" name="password" id="password" value="" placeholder="Password" />
+=======
 									<input type="password" name="password" id="password" value="" placeholder="Password" />
+>>>>>>> a281dbdc3359b5decc2d7030ac403a4a6b6ebb02:login.html
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
@@ -74,6 +78,28 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!--- Login PHP --->
+
+		<?php
+		if (isset($_POST['submit']))
+		    {     
+		$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
+		session_start();
+		$email=$_POST['email'];
+		$password=$_POST['password'];
+		$_SESSION['login_user']=$username; 
+		$query = "SELECT email FROM currentusers WHERE email='$email' and password='$password'";
+		 if (pg_num_rows($query) != 0)
+		{
+		 echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";   
+		  }
+		  else
+		  {
+		echo "<script type='text/javascript'>alert('User Name Or Password Invalid!')</script>";
+		}
+		}
+		?>
 
 	</body>
 </html>
