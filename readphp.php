@@ -30,18 +30,18 @@
 <div class="maindiv">
 <div class="divA">
 <div class="title">
-<h2>Read Data Using PHP</h2>
+<h2>View Your Information</h2>
 </div>
 <div class="divB">
 <div class="divD">
-<p>Click On Menu</p>
+<!-- <p>Click On Menu</p> -->
 <?php
-$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server
-$db = mysql_select_db("company", $connection); // Selecting Database
+$connection = mysql_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646"); // Establishing Connection with Server
+// $db = mysql_select_db("company", $connection); // Selecting Database
 //MySQL Query to read data
 $query = mysql_query("SELECT * FROM d3au1dsacafa29", $connection);
 while ($row = mysql_fetch_array($query)) {
-//echo "<b><a href="readphp.php?id={$row['email']}">{$row['name']}</a></b>";
+echo "<b><a href="readphp.php?id={$row['email']}">{$row['name']}</a></b>";
 echo "<br />";
 }
 ?>
