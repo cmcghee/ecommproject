@@ -37,14 +37,14 @@ f
 
 
             <?php
-            $dbconn = mysql_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
+            $dbconn = db_connect("host=http://ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
             $id = $_GET['email'];
-            $query = db_query("SELECT address FROM currentusers WHERE email='cm4rn@virginia.edu'", $dbconn);
+            $query = db_query("SELECT * FROM currentusers WHERE email='cm4rn@virginia.edu'", $dbconn);
             //$arr = mysql_fetch_array($query);
             //$num = mysql_numrows($query);
 
-             echo $query; 
+             echo $query['email'];
              
              ?>
            
