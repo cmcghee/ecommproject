@@ -52,7 +52,7 @@ $action = '';
 						<h2>Log In</h2>
 					</header>
 					<div class="box">
-						<form method="GET" action="<?php echo $action; ?>">
+						<form method="GET" action="send.php">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-12">
 									<input type="email" name="email" id="email" value="" placeholder="Email" required />
@@ -62,7 +62,7 @@ $action = '';
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
-										<li><input type="submit" value="Log In" onclick="send()"/></li>
+										<li><input type="submit" value="Log In"/></li>
 									</ul>
 								</div>
 							</div>
@@ -78,27 +78,6 @@ $action = '';
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				function send(){
-					<?php
-   	$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
-	   $email = $_GET['email'];
-	$password = $_GET['password'];
-	$query = "SELECT email, password FROM currentusers WHERE email=$email";
-	$pass = pg_query($dbconn,$query) or die('Email not found.');
-	if(password_verify($password,$pass)){
-		Header("location: memberpage.php");
-	}
-	else{
-		$message = "Wrong password";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-		Header("location: login.php");
-	}
-
-
-?>
-				}
-			</script>
 
 	</body>
 </html>
