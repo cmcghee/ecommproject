@@ -57,7 +57,7 @@ while ($row1 = pg_fetch_array($query1)) {
 <!-- Displaying Data Read From Database -->
 <span>Name:</span> <?php echo $row1['name']; ?>
 <span>E-mail:</span> <?php echo $row1['email']; ?>
-//<span>Contact No:</span> <?php echo $row1['employee_contact']; ?>
+<span>Contact No:</span> <?php echo $row1['employee_contact']; ?>
 <span>Address:</span> <?php echo $row1['address']; ?>
 </div>
 <?php
