@@ -24,7 +24,7 @@
 								<a href="#" class="icon fa-angle-down">Menu</a>
 								<ul>
 									<li><a href="signup.php">Sign Up</a></li>
-									<li><a href="login.html">Log In</a></li>
+									<li><a href="login.php">Log In</a></li>
 									<li><a href="about.html">About Us</a></li>
 									<li><a href="contact.php">Contact</a></li>
 									<!-- <li>
@@ -54,15 +54,11 @@
 									<input type="email" name="email" id="email" value="" placeholder="Email" />
 								</div>
 								<div class="col-12">
-<<<<<<< HEAD:login.php
-									<input type="text" name="password" id="password" value="" placeholder="Password" />
-=======
 									<input type="password" name="password" id="password" value="" placeholder="Password" />
->>>>>>> a281dbdc3359b5decc2d7030ac403a4a6b6ebb02:login.html
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
-										<li><input type="submit" value="Log In" /></li>
+										<li><input name="submit" type="submit" value="Log In" /></li>
 									</ul>
 								</div>
 							</div>
