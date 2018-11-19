@@ -85,8 +85,11 @@
 		$email=$_POST['email'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$_SESSION['login_user']=$username; 
+
 		$query = "SELECT email FROM currentusers WHERE email='$email' and password='$password'";
-		 if (pg_num_rows($query) != 0)
+		$result = pg_query($dbconn, $query)
+
+		 if (pg_num_rows($result) != 0)
 		{
 		 echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";   
 		  }
