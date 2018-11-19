@@ -149,7 +149,9 @@
 		color: #646464;
 		font-weight: 300;
 		line-height: 1em;
-		margin: 0 0 0.5em 0;
+        margin: 0 0 0.5em 0;
+        position: relative;
+        top: -1em;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -3157,7 +3159,7 @@
 		}
 
 		#banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: whitesmoke;
+			color: ivory;
 		}
 
 		#banner h2 {
@@ -3206,9 +3208,9 @@
 
 /* Main */
 
-	#main {
+	/* #main {
 		padding: 4em 0;
-	}
+	} */
 
 		#main > header {
 			text-align: center;
@@ -3229,9 +3231,9 @@
 				padding: 1em 0 1.25em 0;
 			}
 
-	body.landing #main {
+	/* body.landing #main {
 		margin-top: -14em;
-	}
+	} */
 
 /* Footer */
 
