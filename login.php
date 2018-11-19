@@ -94,7 +94,8 @@
 			echo "<script type='text/javascript'>alert('$query')</script>";
 		}
 		else{
-			echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
+			echo "<script type='text/javascript'>alert('$query')</script>"
+			//echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
 		}
 		}
 		?>
