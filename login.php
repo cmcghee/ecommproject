@@ -87,7 +87,7 @@
 		$_SESSION['login_user']=$username; 
 
 		$query = "SELECT email FROM currentusers WHERE email='$email' and password='$password'";
-		$result = pg_query($dbconn, $query)
+		$result = pg_query($dbconn, $query);
 
 		 if (pg_num_rows($result) != 0)
 		{
