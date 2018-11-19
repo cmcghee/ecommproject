@@ -39,7 +39,7 @@
 										</ul>
 									</li> -->
 								</ul>
-							<li><a href="signup.php">Purchase</a></li>
+							<li><a href="product_description.html">Product Description</a></li>
 						</ul>
 					</nav>
 				</header>
