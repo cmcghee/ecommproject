@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Read Data From Database Using PHP - Demo Preview</title>
-<meta content="noindex, nofollow" name="robots">
-<link href="style.css" rel="stylesheet" type="text/css">
-</head>
+    <title>View Your Inforamtion</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+        <header id="header" class="alt">
+          <a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="50%" /></span>
+          <nav id="nav">
+            <ul>
+              <li><a href="index.php">Home</a></li>
+              <li>
+                <a href="#" class="icon fa-angle-down">Menu</a>
+                <ul>
+                <li><a href="memberabout.html">View Profile</a></li> <!-- obviously needs to have a new link when we have it -->
+                <li><a href="memberabout.html">About Us</a></li>
+                <li><a href="membercontact.php">Contact</a></li>
+                </ul>
+                <li><a href="index.php">Logout</a></li>
+            </ul>
+          </nav>
+        </header>
 <body>
 <div class="maindiv">
 <div class="divA">
