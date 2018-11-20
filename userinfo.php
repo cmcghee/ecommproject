@@ -42,6 +42,8 @@ ini_set('display_errors', 1);
             echo 'foobar';
             $query = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='cm4rn@virginia.edu'");
                 echo $query['email'];
+                $row = pg_fetch_row($query);
+                echo "email:  $row[0]";
              ?>
             
           </header>
