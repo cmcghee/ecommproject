@@ -89,6 +89,7 @@
 		$email=$_POST['email'];
 		$password = $_POST['password'];
 		$_SESSION['login_user']=$email; 
+		echo $email;
 
 		$query = "SELECT * FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
