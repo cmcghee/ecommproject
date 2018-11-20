@@ -17,7 +17,7 @@ ini_set('display_errors', 1);
           <a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="50%" /></span>
           <nav id="nav">
             <ul>
-              <li><a href="index.php">Home</a></li>
+              <li><a href="memberpage.php">Home</a></li>
               <li>
                 <a href="#" class="icon fa-angle-down">Options</a>
                 <ul>
@@ -35,7 +35,7 @@ ini_set('display_errors', 1);
       <!-- Main -->
         <section id="main" class="container medium">
           <header>
-            <h2>View Your Information</h2>
+            <h2>View Profile</h2>
             
           </header>
 
@@ -57,8 +57,8 @@ ini_set('display_errors', 1);
             </style>
             </head>
 
-            <h2>Bordered Table</h2>
-            <p>Use the CSS border property to add a border to the table.</p>
+            <h2>Your Current Information: </h2>
+            <!-- <p>Use the CSS border property to add a border to the table.</p> -->
 
             <table style="width:100%">
             <tr>
