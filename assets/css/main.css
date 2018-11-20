@@ -3141,7 +3141,7 @@
 
 	#banner {
 		background-attachment: scroll,							fixed;
-		background-color: #666;
+		background-color: #665;
 		background-image: url("images/chairwide.jpg"), url("../../images/chairwide.jpg");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;

@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -12,6 +13,7 @@
 		<link rel="stylesheet" href="assets/css/login.css" />
 	</head>
 	<body class="is-preload">
+
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -37,7 +39,7 @@
 										</ul>
 									</li> -->
 								</ul>
-							<li><a href="purchase.html">Purchase</a></li>
+							<li><a href="product_description.html">Product Description</a></li>
 						</ul>
 					</nav>
 				</header>
