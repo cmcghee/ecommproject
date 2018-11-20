@@ -97,7 +97,7 @@
 
 
 		if (password_verify($password, $hashedpassword)){
-			echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
+			echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
 		} else {
 			echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
 		}
