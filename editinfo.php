@@ -212,7 +212,7 @@ ini_set('display_errors', 1);
                         
                         <div class="col-4 col-12-mobilep">
                             State 
-                            <input type="text" name="city" id="city" value="<?php echo "$row[3]" ?>"/>
+                            <input type="text" name="state" id="state" value="<?php echo "$row[3]" ?>"/>
                         </div>
 
 						<!-- <div class="col-4 col-12-mobilep">
