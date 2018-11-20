@@ -3,7 +3,8 @@
        $email = $_POST['email'];
     $password = $_POST['password'];
     $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
-	$query = "SELECT password FROM currentusers WHERE email='$email'";
+    $query = "SELECT password FROM currentusers WHERE email='$email'";
+    echo($query);
 	$pass = pg_query($dbconn,$query) or die('Email not found.');
 	if(password_verify($hashedpassword,$pass)){
 		Header("location: memberpage.php");
