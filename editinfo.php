@@ -211,8 +211,8 @@ ini_set('display_errors', 1);
 						</div>
 						<div class="col-4 col-12-mobilep">
 							State
-							<select name="State" required id="state" value=<?php echo "$row[3]" ?>>
-								<option value="Change">SELECT</option>
+							<select name="State" required id="state">
+								<option value="Change"><?php echo "$row[3]" ?></option>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
 								<option value="AZ">AZ</option>
