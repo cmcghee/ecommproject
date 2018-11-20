@@ -199,23 +199,23 @@ ini_set('display_errors', 1);
 					<div class="row gtr-50 gtr-uniform">
 						<div class="col-6 col-12-mobilep">
 							Name
-							<input type="text" name="name" id="name" value="" required=true placeholder=$row[2]/>
+							<input type="text" name="name" id="name" value="" required=true placeholder=<?php echo "$row[2]" ?>/>
 						</div>
 						<div class="col-6 col-12-mobilep">
 							Email
-							<input type="email" name="email" id="email" value="" required=true placeholder=$row[0]/>
+							<input type="email" name="email" id="email" value="" required=true placeholder=<?php echo "$row[0]" ?>/>
 						</div>
 						<div class="col-12">
 							Address
-							<input type="text" name="address" id="address" value="" placeholder=$row[0]/>
+							<input type="text" name="address" id="address" value="" placeholder=<?php echo "$row[4]" ?>/>
 						</div>
 						<div class="col-4 col-12-mobilep">
 							City
-							<input type="text" name="city" id="city" value="" placeholder=$row[6]/>
+							<input type="text" name="city" id="city" value="" placeholder=<?php echo "$row[6]" ?>/>
 						</div>
 						<div class="col-4 col-12-mobilep">
 							State
-							<select name="State" required id="state" placeholder=$row[3]>
+							<select name="State" required id="state" placeholder=<?php echo "$row[3]" ?>>
 								<option value="Change">SELECT</option>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
@@ -272,7 +272,7 @@ ini_set('display_errors', 1);
 						</div>
 						<div class="col-4 col-12-mobilep">
 							Zipcode
-							<input type="text" name="zip" id="zip" value="" placeholder=$row[5]/>
+							<input type="text" name="zip" id="zip" value="" placeholder=<?php echo "$row[5]" ?>/>
 						</div>
 						<div class="col-12">
 							<ul class="actions special">
