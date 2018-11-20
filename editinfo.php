@@ -279,18 +279,6 @@ ini_set('display_errors', 1);
 					</div>
 				</form>
 			</div>
-        
-        <?php
-
-        if (pg_query($dbconn,$query))  {
-        $text = "Success";
-        }
-
-        else  {
-        $text = "Error";
-        }
-
-        ?>
             
 
         </section>
