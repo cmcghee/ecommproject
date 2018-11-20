@@ -3,7 +3,7 @@
 
    	// $hashedpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-	$query = "UPDATE currentusers (name, address, city, state, zipcode) VALUES ('$_POST[name]', ''$_POST[address]', '$_POST[city]' '$_POST[state]',  '$_POST[zip]')";
+	$query = "UPDATE currentusers SET name='$_POST[name]', address=$_POST[address]', city='$_POST[city]', state='$_POST[state]', zipcode='$_POST[zip]' WHERE email='firestone361@gmail.com'";
 
 
 	use PHPMailer\PHPMailer\PHPMailer;
