@@ -6,6 +6,8 @@
     $query = "SELECT password FROM currentusers WHERE email='$email'";
     $pass = pg_query($dbconn,$query) or die('Email not found.');
     echo($pass);
+    $row = pg_fetch_row($pass);
+    echo($row[1]);
 	if(password_verify($hashedpassword,$pass)){
 		Header("location: memberpage.php");
 	}
