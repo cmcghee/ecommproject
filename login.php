@@ -88,15 +88,17 @@
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$_SESSION['login_user']=$email; 
 
-		$query = "SELECT * FROM currentusers WHERE email='$email' ";
+		$query = "SELECT password FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
+		echo "<script type='text/javascript'>alert('$result')</script>"
+
 		$hashedpassword = pg_fetch_row($result, 2, 0);
 
-		if (password_verify($password, $hashedpassword)){
-			echo "<script type='text/javascript'>alert('great success')</script>";
-		} else {
-			echo "<script type='text/javascript'>alert('$hashedpassword')</script>";
-		}
+		// if (password_verify($password, $hashedpassword)){
+		// 	echo "<script type='text/javascript'>alert('great success')</script>";
+		// } else {
+		// 	echo "<script type='text/javascript'>alert('$hashedpassword')</script>";
+		// }
 
 		// if (pg_num_rows($result) != 1){
 		// 	echo "<script type='text/javascript'>alert('$query')</script>";
