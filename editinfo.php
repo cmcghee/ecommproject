@@ -183,28 +183,102 @@ ini_set('display_errors', 1);
 
 
           <div class="box">
-            <form method="post" action="email.php">
-              <div class="row gtr-50 gtr-uniform">
-                <div class="col-6 col-12-mobilep">
-                  <input type="text" name="name" id="name" value="" placeholder="Name" />
-                </div>
-                <div class="col-6 col-12-mobilep">
-                  <input type="email" name="email" id="email" value="" placeholder="Email" />
-                </div>
-                <div class="col-12">
-                  <input type="text" name="subject" id="subject" value="" placeholder="Subject" />
-                </div>
-                <div class="col-12">
-                  <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-                </div>
-                <div class="col-12">
-                  <ul class="actions special">
-                    <button type="submit" name="submit" class="button">Send Message</button>
-                  </ul>
-                </div>
-              </div>
-            </form>
-          </div>
+				<form method="POST" action="<?php echo $action; ?>">
+					<div class="row gtr-50 gtr-uniform">
+						<div class="col-6 col-12-mobilep">
+							Name
+							<input type="text" name="name" id="name" value="" required=true/>
+						</div>
+						<div class="col-6 col-12-mobilep">
+							Email
+							<input type="email" name="email" id="email" value="" required/>
+						</div>
+						<div class="col-12">
+							Password
+							<input type="password" name="password" id="password" value="" required/>
+						</div>
+						<div class="col-12">
+							Retype Password
+							<input type="password" name="retype" id="retype" value="" />
+						</div>
+						<div class="col-12">
+							Address
+							<input type="text" name="address" id="address" value="" />
+						</div>
+						<div class="col-4 col-12-mobilep">
+							City
+							<input type="text" name="city" id="city" value="" />
+						</div>
+						<div class="col-4 col-12-mobilep">
+							State
+							<select name="State" required id="state">
+								<option value="Change">SELECT</option>
+								<option value="AL">AL</option>
+								<option value="AK">AK</option>
+								<option value="AZ">AZ</option>
+								<option value="AR">AR</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="DC">DC</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="IA">IA</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="ME">ME</option>
+								<option value="MD">MD</option>
+								<option value="MA">MA</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MS">MS</option>
+								<option value="MO">MO</option>
+								<option value="MT">MT</option>
+								<option value="NE">NE</option>
+								<option value="NV">NV</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NY">NY</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VT">VT</option>
+								<option value="VA">VA</option>
+								<option value="WA">WA</option>
+								<option value="WV">WV</option>
+								<option value="WI">WI</option>
+								<option value="WY">WY</option>
+							</select>
+						</div>
+						<div class="col-4 col-12-mobilep">
+							Zipcode
+							<input type="text" name="zip" id="zip" value="" />
+						</div>
+						<div class="col-12">
+							<ul class="actions special">
+								<!-- <li><input type="submit" value="Sign Up" /></li> -->
+								<input type="submit" value="submit" onclick="validate()" />
+							</ul>
+						</div>
+					</div>
+				</form>
+			</div>
 
 
             <?php
