@@ -3,7 +3,7 @@
 
    	// $hashedpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-	$query = "INSERT INTO currentusers (name, address, city, state, zipcode) VALUES ('$_POST[name]', ''$_POST[address]', '$_POST[city]' '$_POST[State]',  '$_POST[zip]')";
+	$query = "INSERT INTO currentusers (name, address, city, state, zipcode) VALUES ('$_POST[name]', ''$_POST[address]', '$_POST[city]' '$_POST[state]',  '$_POST[zip]')";
 
 
 	use PHPMailer\PHPMailer\PHPMailer;
