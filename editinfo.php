@@ -208,11 +208,17 @@ ini_set('display_errors', 1);
 						<div class="col-4 col-12-mobilep">
 							City
 							<input type="text" name="city" id="city" value="<?php echo "$row[6]" ?>"/>
-						</div>
-						<div class="col-4 col-12-mobilep">
+                        </div>
+                        
+                        <div class="col-4 col-12-mobilep">
+                            State 
+                            <input type="text" name="city" id="city" value="<?php echo "$row[3]" ?>"/>
+                        </div>
+
+						<!-- <div class="col-4 col-12-mobilep">
 							State
-							<select name="State" required id="state">
-								<option value="Change"><?php echo "$row[3]" ?></option>
+							<select name="State" required id="state" value=""/>
+								<option value="Change">CHANGE</option>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
 								<option value="AZ">AZ</option>
@@ -265,7 +271,7 @@ ini_set('display_errors', 1);
 								<option value="WI">WI</option>
 								<option value="WY">WY</option>
 							</select>
-						</div>
+						</div> -->
 						<div class="col-4 col-12-mobilep">
 							Zipcode
 							<input type="text" name="zip" id="zip" value="<?php echo "$row[5]" ?>"/>
