@@ -26,7 +26,7 @@
 									<!--view profile in this dropdown-->
 								</ul>
 							<li><a href="purchase.html">Purchase</a></li>
-							<li><a href="index.php">Logout</a></li>
+							<li><a href="logout.php">Logout</a></li>
 							<!-- remove the purchase link from the top right - we now have this front and center-->
 						</ul>
 					</nav>
