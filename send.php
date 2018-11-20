@@ -8,14 +8,14 @@
     echo($pass);
     $row = pg_fetch_row($pass);
     echo "password: $row[0]";
-	if(password_verify($hashedpassword,$pass)){
+	if(password_verify($hashedpassword,$row[0])){
 		Header("location: memberpage.php");
 	}
-	// else{
-	// 	$message = "Wrong password";
-	// 	echo "<script type='text/javascript'>alert('$message');</script>";
-	// 	Header("location: index.php");
-	// }
+	else{
+		$message = "Wrong password";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+		Header("location: index.php");
+	}
 
 
 ?>
