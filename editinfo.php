@@ -182,36 +182,40 @@ ini_set('display_errors', 1);
           </header>
 
 
+        <?php
+            $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
+
+            $query = pg_query($dbconn, "INSERT INTO currentusers WHERE email='firestone361@gmail.com'");
+            $query1 = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='firestone361@gmail.com'");
+
+            $row = pg_fetch_row($query1);
+
+
+        ?>
+
+
           <div class="box">
 				<form method="POST" action="<?php echo $action; ?>">
 					<div class="row gtr-50 gtr-uniform">
 						<div class="col-6 col-12-mobilep">
 							Name
-							<input type="text" name="name" id="name" value="" required=true/>
+							<input type="text" name="name" id="name" value="" required=true placeholder=$row[2]/>
 						</div>
 						<div class="col-6 col-12-mobilep">
 							Email
-							<input type="email" name="email" id="email" value="" required/>
-						</div>
-						<div class="col-12">
-							Password
-							<input type="password" name="password" id="password" value="" required/>
-						</div>
-						<div class="col-12">
-							Retype Password
-							<input type="password" name="retype" id="retype" value="" />
+							<input type="email" name="email" id="email" value="" required=true placeholder=$row[0]/>
 						</div>
 						<div class="col-12">
 							Address
-							<input type="text" name="address" id="address" value="" />
+							<input type="text" name="address" id="address" value="" placeholder=$row[0]/>
 						</div>
 						<div class="col-4 col-12-mobilep">
 							City
-							<input type="text" name="city" id="city" value="" />
+							<input type="text" name="city" id="city" value="" placeholder=$row[6]/>
 						</div>
 						<div class="col-4 col-12-mobilep">
 							State
-							<select name="State" required id="state">
+							<select name="State" required id="state" placeholder=$row[3]>
 								<option value="Change">SELECT</option>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
@@ -268,7 +272,7 @@ ini_set('display_errors', 1);
 						</div>
 						<div class="col-4 col-12-mobilep">
 							Zipcode
-							<input type="text" name="zip" id="zip" value="" />
+							<input type="text" name="zip" id="zip" value="" placeholder=$row[5]/>
 						</div>
 						<div class="col-12">
 							<ul class="actions special">
@@ -281,12 +285,7 @@ ini_set('display_errors', 1);
 			</div>
 
 
-            <?php
-            $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
-
-            $query = pg_query($dbconn, "INSERT INTO currentusers WHERE email='firestone361@gmail.com'");
-                $row = pg_fetch_row($query);
-            ?>
+            
 
         </section>
 
