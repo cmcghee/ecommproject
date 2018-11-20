@@ -85,29 +85,20 @@
 
 		session_start();
 		$email=$_POST['email'];
-		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+		$password = $_POST['password'];
 		$_SESSION['login_user']=$email; 
 
 		$query = "SELECT * FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
 		$row = pg_fetch_array($result);
-		$pray = $row['password'];
-		echo "<script type='text/javascript'>alert('$pray')</script>";
+		$hashedpassword = $row['password'];
 
-		$hashedpassword = pg_fetch_row($result, 2, 0);
 
-		// if (password_verify($password, $hashedpassword)){
-		// 	echo "<script type='text/javascript'>alert('great success')</script>";
-		// } else {
-		// 	echo "<script type='text/javascript'>alert('$hashedpassword')</script>";
-		// }
-
-		// if (pg_num_rows($result) != 1){
-		// 	echo "<script type='text/javascript'>alert('$query')</script>";
-		// }
-		// else{
-		// 	echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
-		// }
+		if (password_verify($password, $hashedpassword)){
+			echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
+		} else {
+			echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
+		}
 		}
 		?>
 
