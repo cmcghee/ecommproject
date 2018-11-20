@@ -43,7 +43,7 @@ ini_set('display_errors', 1);
             <?php
             $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
-            $query = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='cm4rn@virginia.edu'");
+            $query = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='firestone361@gmail.com'");
                 $row = pg_fetch_row($query);
             ?>
 
@@ -58,7 +58,6 @@ ini_set('display_errors', 1);
             </head>
 
             <h2>Your Current Information: </h2>
-            <!-- <p>Use the CSS border property to add a border to the table.</p> -->
 
             <table style="width:100%">
             <tr>
