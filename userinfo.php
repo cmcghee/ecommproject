@@ -107,6 +107,11 @@ ini_set('display_errors', 1);
               </div>
             </form>
           </div> -->
+
+          <ul class="actions special">
+            <li><a href="index.php" class="button primary">Edit Your Information</a></li>
+          </ul>
+
         </section>
 
     <!-- Scripts -->
