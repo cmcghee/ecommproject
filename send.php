@@ -9,11 +9,11 @@
 	if(password_verify($hashedpassword,$pass)){
 		Header("location: memberpage.php");
 	}
-	else{
-		$message = "Wrong password";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-		Header("location: index.php");
-	}
+	// else{
+	// 	$message = "Wrong password";
+	// 	echo "<script type='text/javascript'>alert('$message');</script>";
+	// 	Header("location: index.php");
+	// }
 
 
 ?>
