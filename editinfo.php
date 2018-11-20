@@ -185,7 +185,7 @@ ini_set('display_errors', 1);
         <?php
             $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
-            $query = pg_query($dbconn, "INSERT INTO currentusers WHERE email='firestone361@gmail.com'");
+            $query = "INSERT INTO currentusers (name, address, city, state, zipcode) WHERE email='firestone361@gmail.com' ('$_POST[name]', '$_POST[address]','$_POST[city]', '$_POST[state]', '$_POST[zipcode]')";
             $query1 = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='firestone361@gmail.com'");
 
             $row = pg_fetch_row($query1);
@@ -201,21 +201,17 @@ ini_set('display_errors', 1);
 							Name
 							<input type="text" name="name" id="name" value="<?php echo "$row[2]" ?>" required=true/>
 						</div>
-						<div class="col-6 col-12-mobilep">
-							Email
-							<input type="email" name="email" id="email" value="" required=true placeholder=<?php echo "$row[0]" ?>/>
-						</div>
 						<div class="col-12">
 							Address
-							<input type="text" name="address" id="address" value="" placeholder=<?php echo "$row[4]" ?>/>
+							<input type="text" name="address" id="address" value="<?php echo "$row[4]" ?>"/>
 						</div>
 						<div class="col-4 col-12-mobilep">
 							City
-							<input type="text" name="city" id="city" value="" placeholder=<?php echo "$row[6]" ?>/>
+							<input type="text" name="city" id="city" value="<?php echo "$row[6]" ?>"/>
 						</div>
 						<div class="col-4 col-12-mobilep">
 							State
-							<select name="State" required id="state" placeholder=<?php echo "$row[3]" ?>>
+							<select name="State" required id="state" value=<?php echo "$row[3]" ?>>
 								<option value="Change">SELECT</option>
 								<option value="AL">AL</option>
 								<option value="AK">AK</option>
@@ -272,7 +268,7 @@ ini_set('display_errors', 1);
 						</div>
 						<div class="col-4 col-12-mobilep">
 							Zipcode
-							<input type="text" name="zip" id="zip" value="" placeholder=<?php echo "$row[5]" ?>/>
+							<input type="text" name="zip" id="zip" value="<?php echo "$row[5]" ?>"/>
 						</div>
 						<div class="col-12">
 							<ul class="actions special">
@@ -283,8 +279,18 @@ ini_set('display_errors', 1);
 					</div>
 				</form>
 			</div>
+        
+        <?php
 
+        if (pg_query($dbconn,$query))  {
+        $text = "Success";
+        }
 
+        else  {
+        $text = "Error";
+        }
+
+        ?>
             
 
         </section>
