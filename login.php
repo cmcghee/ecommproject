@@ -90,7 +90,8 @@
 
 		$query = "SELECT password FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
-		echo "<script type='text/javascript'>alert('$result')</script>";
+		$row = pg_fetch_array($result)
+		echo "<script type='text/javascript'>alert('$row')</script>";
 
 		$hashedpassword = pg_fetch_row($result, 2, 0);
 
