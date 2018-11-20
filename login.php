@@ -88,10 +88,11 @@
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$_SESSION['login_user']=$email; 
 
-		$query = "SELECT password FROM currentusers WHERE email='$email' ";
+		$query = "SELECT * FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
 		$row = pg_fetch_array($result);
-		echo "<script type='text/javascript'>alert('$row['password']')</script>";
+		$pray = $row['password'];
+		echo "<script type='text/javascript'>alert('$pray')</script>";
 
 		$hashedpassword = pg_fetch_row($result, 2, 0);
 
