@@ -52,7 +52,7 @@ $action = '';
 						<h2>Log In</h2>
 					</header>
 					<div class="box">
-						<form method="GET" action="send.php">
+						<form method="POST" action="send.php">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-12">
 									<input type="email" name="email" id="email" value="" placeholder="Email" required />
