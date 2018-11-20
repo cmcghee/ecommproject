@@ -199,7 +199,7 @@ ini_set('display_errors', 1);
 					<div class="row gtr-50 gtr-uniform">
 						<div class="col-6 col-12-mobilep">
 							Name
-							<input type="text" name="name" id="name" value="<?php echo "$row[2]" ?>" required=true/>
+							<input type="text" name="name" id="name" value="<?php echo "$row[2]" ?>"/>
 						</div>
 						<div class="col-12">
 							Address
