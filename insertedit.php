@@ -1,9 +1,10 @@
 <?php
+session_start();
    	$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
    	// $hashedpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-	$query = "UPDATE currentusers SET name='$_POST[name]', address='$_POST[address]', city='$_POST[city]', state='$_POST[state]', zipcode='$_POST[zip]' WHERE email='joewang1324072@gmail.com'";
+	$query = "UPDATE currentusers SET name='$_POST[name]', address='$_POST[address]', city='$_POST[city]', state='$_POST[state]', zipcode='$_POST[zip]' WHERE email='".$_SESSION['login_user']."'";
 
 
 	use PHPMailer\PHPMailer\PHPMailer;

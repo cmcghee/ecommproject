@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set('display_errors', 1);
 ?>
 <!DOCTYPE HTML>
@@ -186,7 +187,7 @@ ini_set('display_errors', 1);
             $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
             //$query = "INSERT INTO currentusers (name, address, city, state, zipcode) WHERE email='firestone361@gmail.com' ('$_POST[name]', '$_POST[address]','$_POST[city]', '$_POST[state]', '$_POST[zipcode]')";
-            $query1 = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='joewang1324072@gmail.com' ");
+            $query1 = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='".$_SESSION['login_user']."' ");
 
             $row = pg_fetch_row($query1);
 
