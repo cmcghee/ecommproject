@@ -6,14 +6,14 @@
     $query = "SELECT * FROM currentusers WHERE email='$email' and password='$hashedpassword'";
     $pass = pg_query($dbconn,$query) or die('Email not found.');
     echo($pass);
-	if($pass){
-		Header("location: memberpage.php");
-	}
-	else{
-		$message = "Wrong password";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-		Header("location: index.php");
-	}
+	// if($pass){
+	// 	Header("location: memberpage.php");
+	// }
+	// else{
+	// 	$message = "Wrong password";
+	// 	echo "<script type='text/javascript'>alert('$message');</script>";
+	// 	Header("location: index.php");
+	// }
 
 
 ?>
