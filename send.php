@@ -7,7 +7,7 @@
     $pass = pg_query($dbconn,$query) or die('Email not found.');
     echo($pass);
     $row = pg_fetch_row($pass);
-    echo "password: $row[1]";
+    echo "password: $row[0]";
 	if(password_verify($hashedpassword,$pass)){
 		Header("location: memberpage.php");
 	}
