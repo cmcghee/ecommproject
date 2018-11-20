@@ -40,17 +40,48 @@ ini_set('display_errors', 1);
           </header>
 
 
-        <?php
+            <?php
             $dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
             $query = pg_query($dbconn, "SELECT * FROM currentusers WHERE email='cm4rn@virginia.edu'");
                 $row = pg_fetch_row($query);
             ?>
-                
-                
-            <?php echo "email:  $row[2]"; ?>
-            
-           
+
+
+
+            <head>
+            <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+            </style>
+            </head>
+
+            <h2>Bordered Table</h2>
+            <p>Use the CSS border property to add a border to the table.</p>
+
+            <table style="width:100%">
+            <tr>
+                <th> <?php echo "Full Name: " ?> </th>
+                <th> <?php echo "Email: " ?> </th> 
+                <th> <?php echo "Address: " ?> </th>
+                <th> <?php echo "City: " ?> </th>
+                <th> <?php echo "State: " ?> </th>
+                <th> <?php echo "Zipcode: " ?> </th>
+            </tr>
+
+            <tr>
+                <td> <?php echo "$row[2]" ?> </td>
+                <td> <?php echo "$row[0]" ?> </td> 
+                <td> <?php echo "$row[4]" ?> </td>
+                <td> <?php echo "$row[6]" ?> </td>
+                <td> <?php echo "$row[3]" ?> </td>
+                <td> <?php echo "$row[5]" ?> </td>
+            </tr>
+            </table>
+
+
+            </table>
 
 
 
