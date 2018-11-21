@@ -1,5 +1,6 @@
 <?php
-
+    
+    session_start();
 	ini_set('display_errors', 1);
 
 
@@ -10,7 +11,10 @@
 	$query = "INSERT INTO currentusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', '$hashedpassword', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 
 	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\Exception;
+    
+if (isset($_POST['submit']))
+{
     $email= $_POST['email'];
 
 	require 'PHPMailer-master/src/Exception.php';
@@ -18,8 +22,6 @@
 	require 'PHPMailer-master/src/SMTP.php';
 	$mail = new PHPMailer();                              // Passing `true` enables exceptions
 
-if (isset($_POST['submit']))
-{
     //Server settings
     $mail->SMTPDebug = 0;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
