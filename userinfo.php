@@ -28,6 +28,7 @@ if(!($_SESSION['loggedin'] == 1)){
                 <li><a href="memberabout.php">About Us</a></li>
                 <li><a href="membercontact.php">Contact</a></li>
                 </ul>
+                <li><a href="purchase.php">Purchase</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
           </nav>
