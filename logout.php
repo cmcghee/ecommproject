@@ -11,10 +11,10 @@
 
 <?php
 
-if(isset($_GET['logout'])) {
+if(isset($_GET['Logout'])) {
     session_destroy();
     unset($_SESSION['login_user']);
-    header('location:index.php');
+    header('Location:index.php');
 }
 
 ?>
