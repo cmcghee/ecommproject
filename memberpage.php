@@ -4,7 +4,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 	echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
 }
 
-session_start();
+//session_start();
 
 ?>
 
