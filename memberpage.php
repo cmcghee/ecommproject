@@ -1,6 +1,9 @@
 <?php
 session_start();
 print_r($_SESSION);
+if(!(isset($SESSION['loggedin']) && $_SESSION['loggedin'] == true)){
+	header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
