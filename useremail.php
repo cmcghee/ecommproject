@@ -62,7 +62,7 @@
           <a href="index.php"></a><span class="image featured"><img src="images/logo.png" width="40%" /></span>
           <nav id="nav">
             <ul>
-              <li><a href="index.php">Home</a></li>
+              <li><a href="memberpage.php">Home</a></li>
               <li>
                 <a href="#" class="icon fa-angle-down">Menu</a>
                 <ul>
@@ -71,6 +71,7 @@
                   <li><a href="contact.php">Contact</a></li>
                 </ul>
               <li><a href="purchase.php">Purchase</a></li>
+              <li><a href="logout.php">Logout</a></li>
             </ul>
           </nav>
         </header>
