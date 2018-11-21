@@ -5,6 +5,8 @@
 // 	echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
 // }
 
+echo 'session_status()';
+
 ?>
 
 <!DOCTYPE html>
