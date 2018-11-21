@@ -1,11 +1,11 @@
 <?php
 session_start();
 echo($SESSION['loggedin']);
-if(isset($SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-}
-else{
-	header("Location: index.php");
-}
+// if(isset($SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+// }
+// else{
+// 	header("Location: index.php");
+// }
 
 ?>
 
