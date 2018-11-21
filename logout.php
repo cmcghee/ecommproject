@@ -10,8 +10,9 @@
 ?>
 
 <?php
-
+session_start();
 if(isset($_GET['Logout'])) {
+
     session_destroy();
     unset($_SESSION['login_user']);
     header('Location:index.php');
