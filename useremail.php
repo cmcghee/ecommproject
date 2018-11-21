@@ -66,12 +66,11 @@
               <li>
                 <a href="#" class="icon fa-angle-down">Menu</a>
                 <ul>
-                  <li><a href="signup.php">Sign Up</a></li>
-                  <li><a href="login.php">Log In</a></li>
+                    <li><a href="userinfo.php">View Profile</a></li>
                   <li><a href="about.html">About Us</a></li>
                   <li><a href="contact.php">Contact</a></li>
                 </ul>
-              <li><a href="product_description.html">Product description</a></li>
+              <li><a href="purchase.php">Purchase</a></li>
             </ul>
           </nav>
         </header>

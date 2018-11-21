@@ -41,7 +41,7 @@
             <h2>Contact Us</h2>
           </header>
           <div class="box">
-            <form method="post" action="email.php">
+            <form method="post" action="useremail.php">
               <div class="row gtr-50 gtr-uniform">
                 <div class="col-6 col-12-mobilep">
                   <input type="text" name="name" id="name" value="" placeholder="Name" />

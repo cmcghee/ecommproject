@@ -90,7 +90,7 @@ if(!($_SESSION['loggedin'] == 1)){
 				<h2><?php echo $text?></h2>
 			</header>
 			<div class="box">
-				<li><a href="index.php">Return to the main page</a></li>
+				<li><a href="memberpage.php">Return to the main page</a></li>
 			</div>
 		</section>
 
