@@ -308,7 +308,7 @@ $action = '';
 		$hashedpassword = $row['password'];
 
 
-		if ($text == "success"){
+		if ($text == "Success"){
 			echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
 		} else {
 			echo "<script type='text/javascript'>alert('Please fix noted errors')</script>";
