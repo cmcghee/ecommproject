@@ -12,9 +12,7 @@
 
 	use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
-    
-if (isset($_POST['submit']))
-{
+
     $email= $_POST['email'];
 
 	require 'PHPMailer-master/src/Exception.php';
@@ -51,7 +49,6 @@ if (isset($_POST['submit']))
         $text = "Failed, email in use";
     }
 
-}
 ?>
 
 <!DOCTYPE html>
