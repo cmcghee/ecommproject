@@ -40,7 +40,8 @@
 
 	if (pg_query($dbconn,$query))  {
 		$_SESSION['login_user']=$email;
-        $mail->send();
+		$mail->send();
+		header("Location: memberpage.php");
     }
     else  {
 		$_SESSION['loggedin'] = false;
