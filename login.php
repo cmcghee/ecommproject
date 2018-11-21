@@ -95,10 +95,9 @@ session_start();
 		$row = pg_fetch_array($result);
 		$hashedpassword = $row['password'];
 
-
 		if (password_verify($password, $hashedpassword)){
 			$_SESSION['loggedin'] = true;
-			echo $_SESSION['loggedin'];
+			print_r($_SESSION);
 		} else {
 			echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
 		}
