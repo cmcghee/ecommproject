@@ -1,9 +1,6 @@
 
 <?php
 session_start();
-print_r($_SESSION);
-$log = $_SESSION['loggedin'];
-echo $log;
 if(!($_SESSION['loggedin'] == 1)){
 	header("Location: index.php");
 }
@@ -37,7 +34,7 @@ if(!($_SESSION['loggedin'] == 1)){
 									<!--view profile in this dropdown-->
 								</ul>
 							<li><a href="purchase.php">Purchase</a></li>
-							<li><a href="index.php">Logout</a></li>
+							<li><a href="logout.php">Logout</a></li>
 							<!-- remove the purchase link from the top right - we now have this front and center-->
 						</ul>
 					</nav>

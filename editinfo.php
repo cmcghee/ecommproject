@@ -1,6 +1,8 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
+if(!($_SESSION['loggedin'] == 1)){
+	header("Location: index.php");
+}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -168,8 +170,9 @@ ini_set('display_errors', 1);
                 <li><a href="userinfo.php">View Profile</a></li> <!-- obviously needs to have a new link when we have it -->
                 <li><a href="memberabout.php">About Us</a></li>
                 <li><a href="membercontact.php">Contact</a></li>
-                </ul>
-                <li><a href="index.php">Logout</a></li>
+				</ul>
+				<li><a href="purchase.php">Purchase</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
           </nav>
         </header>
