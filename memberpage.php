@@ -18,7 +18,7 @@ if($_SESSION['login_user'] == $email) {
 	echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
 } 
 else {
-	echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
+	echo "<script type='text/javascript'>alert('Incorrect Login') location.href='index.php'</script>";
 }
 
 }
