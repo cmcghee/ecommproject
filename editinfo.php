@@ -1,6 +1,8 @@
 <?php
 session_start();
-ini_set('display_errors', 1);
+if(!($_SESSION['loggedin'] == 1)){
+	header("Location: index.php");
+}
 ?>
 <!DOCTYPE HTML>
 <html>
