@@ -309,6 +309,7 @@ $action = '';
 
 
 		if ($result){
+			$_SESSION['loggedin']=true; 
 			echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
 		} else {
 			echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
