@@ -39,11 +39,13 @@
 	
 
 	if (pg_query($dbconn,$query))  {
-        $text = "Success";
+		$_SESSION['login_user']=$email;
         $mail->send();
     }
     else  {
-        $text = "Failed, email in use";
+		$_SESSION['loggedin'] = false;
+		echo "<script type='text/javascript'>alert('Failed, email in use')</script>";
+		header("Location: signup.php");
     }
 
 ?>

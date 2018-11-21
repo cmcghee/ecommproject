@@ -1,4 +1,7 @@
 
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -23,6 +26,7 @@
 					return
 				} else {
 					<?php
+						$_SESSION['loggedin'] = true;
 						$action = "insert.php";
 					?>
 				}
