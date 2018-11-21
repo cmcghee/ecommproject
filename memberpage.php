@@ -14,12 +14,13 @@ $result = pg_query($dbconn, $query);
 $row = pg_fetch_array($result);
 $hashedpassword = $row['password'];
 
-
-if (password_verify($password, $hashedpassword)){
+if($_SESSION['login_user'] == $email) {
 	echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
-} else {
+} 
+else {
 	echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
 }
+
 }
 ?>
 
