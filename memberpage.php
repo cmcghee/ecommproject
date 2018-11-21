@@ -1,11 +1,11 @@
 <?php
-
-if (session_status() != PHP_SESSION_ACTIVE) {
-	echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
+session_start();
+print_r($_SESSION);
+$log = $_SESSION['loggedin'];
+echo $log;
+if(!($_SESSION['loggedin'] == 1)){
+	header("Location: index.php");
 }
-
-//session_start();
-
 ?>
 
 <!DOCTYPE html>
