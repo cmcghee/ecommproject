@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,8 +27,8 @@
             <li>
               <a href="#" class="icon fa-angle-down">Options</a>
               <ul>
-                <li><a href="userinfo.html">View Profile</a></li> <!-- obviously needs to have a new link when we have it -->
-                <li><a href="memberabout.html">About Us</a></li>
+                <li><a href="userinfo.php">View Profile</a></li> <!-- obviously needs to have a new link when we have it -->
+                <li><a href="memberabout.php">About Us</a></li>
                 <li><a href="membercontact.php">Contact</a></li>
                 <!--
                   <li>
@@ -40,7 +44,7 @@
                 
               </ul>
             </li>
-            <li><a href="purchase.html">Purchase</a></li>
+            <li><a href="purchase.php">Purchase</a></li>
             <li><a href="index.php">Logout</a></li>
           </ul>
         </nav>

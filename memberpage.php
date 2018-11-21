@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,11 +24,11 @@
 								<ul>
 									<!-- we want to keep about and contact -->
 									<li><a href="userinfo.php">View Profile</a></li>
-									<li><a href="memberabout.html">About Us</a></li>
+									<li><a href="memberabout.php">About Us</a></li>
 									<li><a href="membercontact.php">Contact</a></li>
 									<!--view profile in this dropdown-->
 								</ul>
-							<li><a href="purchase.html">Purchase</a></li>
+							<li><a href="purchase.php">Purchase</a></li>
 							<li><a href="index.php">Logout</a></li>
 							<!-- remove the purchase link from the top right - we now have this front and center-->
 						</ul>

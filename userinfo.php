@@ -22,8 +22,8 @@ ini_set('display_errors', 1);
               <li>
                 <a href="#" class="icon fa-angle-down">Options</a>
                 <ul>
-                <li><a href="userinfo.html">View Profile</a></li>
-                <li><a href="memberabout.html">About Us</a></li>
+                <li><a href="userinfo.php">View Profile</a></li>
+                <li><a href="memberabout.php">About Us</a></li>
                 <li><a href="membercontact.php">Contact</a></li>
                 </ul>
                 <li><a href="index.php">Logout</a></li>
