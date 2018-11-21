@@ -88,7 +88,7 @@
 		session_start();
 		$email=$_POST['email'];
 		$password = $_POST['password'];
-		$_SESSION['login_user']=$email; 
+		$_SESSION['login_user']=$email;
 
 		$query = "SELECT * FROM currentusers WHERE email='$email' ";
 		$result = pg_query($dbconn, $query);
@@ -97,6 +97,7 @@
 
 
 		if (password_verify($password, $hashedpassword)){
+			$_SESSION['loggedin']=true;
 			echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
 		} else {
 			echo "<script type='text/javascript'>alert('Incorrect Login')</script>";

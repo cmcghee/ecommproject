@@ -1,10 +1,10 @@
 <?php
-
-if (session_status() != PHP_SESSION_ACTIVE) {
-	echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
+session_start();
+if(isset($SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 }
-
-//session_start();
+else{
+	header("Location: index.php");
+}
 
 ?>
 
