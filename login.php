@@ -97,7 +97,7 @@ session_start();
 
 		if (password_verify($password, $hashedpassword)){
 			$_SESSION['loggedin'] = true;
-			print_r($_SESSION);
+			header("Location: memberpage.php");
 		} else {
 			echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
 		}
