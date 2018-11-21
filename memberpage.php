@@ -1,12 +1,15 @@
+<?php 
+	session_start();
+?>
+
 <?php
 
 if (session_status() != PHP_SESSION_ACTIVE) {
 	echo "<script language='javascript' type='text/javascript'> location.href='index.php' </script>";
 }
+
 else
 	echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
-
-//session_start();
 
 ?>
 
