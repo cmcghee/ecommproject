@@ -1,9 +1,7 @@
 <?php
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
-	
-if (isset($_POST['submit']))
-{
+
+
+
 
    	$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
 
@@ -11,17 +9,17 @@ if (isset($_POST['submit']))
 
 	$query = "INSERT INTO currentusers (email, password, name, state, address, zipcode, city) VALUES ('$_POST[email]', '$hashedpassword', '$_POST[name]','$_POST[State]', '$_POST[address]', '$_POST[zip]', '$_POST[city]')";
 
-	$password = $_POST['password'];
-	$_SESSION['login_user']=$email;
-
-	// use PHPMailer\PHPMailer\PHPMailer;
-	// use PHPMailer\PHPMailer\Exception;
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
     $email= $_POST['email'];
 
 	require 'PHPMailer-master/src/Exception.php';
 	require 'PHPMailer-master/src/PHPMailer.php';
 	require 'PHPMailer-master/src/SMTP.php';
 	$mail = new PHPMailer();                              // Passing `true` enables exceptions
+
+if (isset($_POST['submit']))
+{
     //Server settings
     $mail->SMTPDebug = 0;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
