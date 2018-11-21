@@ -1,6 +1,8 @@
 <?php
-session_start();
-echo session_status();
+  session_start();
+  if(!($_SESSION['loggedin'] == 1)){
+	  header("Location: index.php");
+  }
 ?>
 
 <!DOCTYPE html>
