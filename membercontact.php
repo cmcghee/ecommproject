@@ -1,5 +1,8 @@
 <?php
-session_start();
+  session_start();
+  if(!($_SESSION['loggedin'] == 1)){
+	  header("Location: index.php");
+  }
 ?>
 
 <!DOCTYPE HTML>
@@ -27,7 +30,7 @@ session_start();
                 <li><a href="membercontact.php">Contact</a></li>
                 </ul>
                 <li><a href="purchase.php">Purchase</a></li>
-                <li><a href="index.php">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
           </nav>
         </header>

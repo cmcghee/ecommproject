@@ -1,8 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
-$log = $_SESSION['loggedin'];
-echo $log;
 if(!($_SESSION['loggedin'] == 1)){
 	header("Location: index.php");
 }

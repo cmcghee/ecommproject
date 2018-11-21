@@ -1,6 +1,3 @@
-<?php
-$action = '';
-?>
 
 <!DOCTYPE HTML>
 <!--
@@ -290,32 +287,6 @@ $action = '';
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
-		<?php
-		if (isset($_POST['submit']))
-		{
-
-		$dbconn = pg_connect("host=ec2-184-72-234-230.compute-1.amazonaws.com port=5432 dbname=d3au1dsacafa29 user=zbujcjxtcupcbv password=a415fc185f58773e0af4dcf7a642a5ae27158298a6b28dbcbe3dfd4c4cb9d646");
-
-		session_start();
-		$email=$_POST['email'];
-		$password = $_POST['password'];
-		$_SESSION['login_user']=$email; 
-
-		$query = "SELECT * FROM currentusers WHERE email='$email' ";
-		$result = pg_query($dbconn, $query);
-		$row = pg_fetch_array($result);
-		$hashedpassword = $row['password'];
-
-
-		if ($result){
-			$_SESSION['loggedin']=true; 
-			echo "<script language='javascript' type='text/javascript'> location.href='memberpage.php' </script>";
-		} else {
-			echo "<script type='text/javascript'>alert('Incorrect Login')</script>";
-		}
-		}
-		?>
 
 </body>
 
